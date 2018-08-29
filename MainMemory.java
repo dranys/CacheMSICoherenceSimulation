@@ -11,22 +11,22 @@ package cachecoherencesimulation;
  */
 public class MainMemory {
     
-    public MemoryLine line0;
-    public MemoryLine line1;
-    public MemoryLine line2;
-    public MemoryLine line3;
-    public MemoryLine line4;
-    public MemoryLine line5;
-    public MemoryLine line6;
-    public MemoryLine line7;
-    public MemoryLine line8;
-    public MemoryLine line9;
-    public MemoryLine line10;
-    public MemoryLine line11;
-    public MemoryLine line12;
-    public MemoryLine line13;
-    public MemoryLine line14;
-    public MemoryLine line15;
+    private MemoryLine line0;
+    private MemoryLine line1;
+    private MemoryLine line2;
+    private MemoryLine line3;
+    private MemoryLine line4;
+    private MemoryLine line5;
+    private MemoryLine line6;
+    private MemoryLine line7;
+    private MemoryLine line8;
+    private MemoryLine line9;
+    private MemoryLine line10;
+    private MemoryLine line11;
+    private MemoryLine line12;
+    private MemoryLine line13;
+    private MemoryLine line14;
+    private MemoryLine line15;
     
     MainMemory(){
     this.line0 = new MemoryLine(0, 0);
@@ -173,6 +173,62 @@ public class MainMemory {
         }
         return data;
         
+    }
+    public int getIdProc(int direction){
+        
+        int data = 0;
+        switch(direction){
+            case 0:
+                data = line0.getIdProcessor();
+                break;
+            case 1:
+                data = line1.getIdProcessor();
+                break;
+            case 2:
+                data = line2.getIdProcessor();
+                break;
+            case 3:
+                data = line3.getIdProcessor();
+                break;
+            case 4:
+                data = line4.getIdProcessor();
+                break;
+            case 5:
+                data = line5.getIdProcessor();
+                break;
+            case 6:
+                data = line6.getIdProcessor();
+                break;
+            case 7:
+                data = line7.getIdProcessor();
+                break;
+            case 8:
+                data = line8.getIdProcessor();
+                break;
+            case 9:
+                data = line9.getIdProcessor();
+                break;
+            case 10:
+                data = line10.getIdProcessor();
+                break;
+            case 11:
+                data = line11.getIdProcessor();
+                break;
+            case 12:
+                data = line12.getIdProcessor();
+                break;
+            case 13:
+                data = line13.getIdProcessor();
+                break;
+            case 14:
+                data = line14.getIdProcessor();
+                break;
+            case 15:
+                data = line15.getIdProcessor();
+                break;
+        }
+        return data;
+    
     }
     
 }

@@ -15,7 +15,7 @@ public class BusInterface{
     private boolean busRd, busWr;
     private boolean run;
     private String name;
-    private MainMemory memory;
+    MainMemory memory;
     private int processorIdLine;
 
     public BusInterface(String name) {

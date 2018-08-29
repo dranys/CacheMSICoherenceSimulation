@@ -5,9 +5,12 @@
  */
 package cachecoherencesimulation;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.Timer;
 
 /**
  *
@@ -15,11 +18,28 @@ import java.util.logging.Logger;
  */
 public class ventana extends javax.swing.JFrame {
 
+    MultiprocessorArchitecture a1;
+    boolean running;
+
     /**
      * Creates new form ventana
      */
     public ventana() {
+        this.running = true;
+
+        a1 = new MultiprocessorArchitecture();
+        a1.start();
         initComponents();
+
+        updateWindow();
+        Timer timer = new Timer(500, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateWindow();
+            }
+        });
+        timer.start();
+
     }
 
     /**
@@ -45,7 +65,7 @@ public class ventana extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
+        cacheState2_0 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -62,21 +82,21 @@ public class ventana extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
+        cacheState2_1 = new javax.swing.JLabel();
+        cacheState2_2 = new javax.swing.JLabel();
+        cacheState2_3 = new javax.swing.JLabel();
+        cacheState2_4 = new javax.swing.JLabel();
+        cacheState2_5 = new javax.swing.JLabel();
+        cacheState2_6 = new javax.swing.JLabel();
+        cacheState2_7 = new javax.swing.JLabel();
+        cacheState2_8 = new javax.swing.JLabel();
+        cacheState2_9 = new javax.swing.JLabel();
+        cacheState2_10 = new javax.swing.JLabel();
+        cacheState2_11 = new javax.swing.JLabel();
+        cacheState2_12 = new javax.swing.JLabel();
+        cacheState2_13 = new javax.swing.JLabel();
+        cacheState2_14 = new javax.swing.JLabel();
+        cacheState2_15 = new javax.swing.JLabel();
         cache2_Block0 = new javax.swing.JLabel();
         cache2_Block1 = new javax.swing.JLabel();
         cache2_Block2 = new javax.swing.JLabel();
@@ -98,7 +118,7 @@ public class ventana extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel57 = new javax.swing.JLabel();
+        cacheState4_0 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
@@ -115,21 +135,21 @@ public class ventana extends javax.swing.JFrame {
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jLabel73 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
-        jLabel77 = new javax.swing.JLabel();
-        jLabel78 = new javax.swing.JLabel();
-        jLabel79 = new javax.swing.JLabel();
-        jLabel80 = new javax.swing.JLabel();
-        jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
-        jLabel83 = new javax.swing.JLabel();
-        jLabel84 = new javax.swing.JLabel();
-        jLabel85 = new javax.swing.JLabel();
-        jLabel86 = new javax.swing.JLabel();
-        jLabel87 = new javax.swing.JLabel();
-        jLabel88 = new javax.swing.JLabel();
+        cacheState4_1 = new javax.swing.JLabel();
+        cacheState4_2 = new javax.swing.JLabel();
+        cacheState4_3 = new javax.swing.JLabel();
+        cacheState4_4 = new javax.swing.JLabel();
+        cacheState4_5 = new javax.swing.JLabel();
+        cacheState4_6 = new javax.swing.JLabel();
+        cacheState4_7 = new javax.swing.JLabel();
+        cacheState4_8 = new javax.swing.JLabel();
+        cacheState4_9 = new javax.swing.JLabel();
+        cacheState4_10 = new javax.swing.JLabel();
+        cacheState4_11 = new javax.swing.JLabel();
+        cacheState4_12 = new javax.swing.JLabel();
+        cacheState4_13 = new javax.swing.JLabel();
+        cacheState4_14 = new javax.swing.JLabel();
+        cacheState4_15 = new javax.swing.JLabel();
         cache4_Block0 = new javax.swing.JLabel();
         cache4_Block1 = new javax.swing.JLabel();
         cache4_Block2 = new javax.swing.JLabel();
@@ -147,7 +167,7 @@ public class ventana extends javax.swing.JFrame {
         cache4_Block14 = new javax.swing.JLabel();
         cache4_Block15 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel105 = new javax.swing.JLabel();
+        cacheState3_0 = new javax.swing.JLabel();
         jLabel106 = new javax.swing.JLabel();
         jLabel107 = new javax.swing.JLabel();
         jLabel108 = new javax.swing.JLabel();
@@ -164,21 +184,21 @@ public class ventana extends javax.swing.JFrame {
         jLabel119 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
         jLabel121 = new javax.swing.JLabel();
-        jLabel122 = new javax.swing.JLabel();
-        jLabel123 = new javax.swing.JLabel();
-        jLabel124 = new javax.swing.JLabel();
-        jLabel125 = new javax.swing.JLabel();
-        jLabel126 = new javax.swing.JLabel();
-        jLabel127 = new javax.swing.JLabel();
-        jLabel128 = new javax.swing.JLabel();
-        jLabel129 = new javax.swing.JLabel();
-        jLabel130 = new javax.swing.JLabel();
-        jLabel131 = new javax.swing.JLabel();
-        jLabel132 = new javax.swing.JLabel();
-        jLabel133 = new javax.swing.JLabel();
-        jLabel134 = new javax.swing.JLabel();
-        jLabel135 = new javax.swing.JLabel();
-        jLabel136 = new javax.swing.JLabel();
+        cacheState3_1 = new javax.swing.JLabel();
+        cacheState3_2 = new javax.swing.JLabel();
+        cacheState3_3 = new javax.swing.JLabel();
+        cacheState3_4 = new javax.swing.JLabel();
+        cacheState3_5 = new javax.swing.JLabel();
+        cacheState3_6 = new javax.swing.JLabel();
+        cacheState3_7 = new javax.swing.JLabel();
+        cacheState3_8 = new javax.swing.JLabel();
+        cacheState3_9 = new javax.swing.JLabel();
+        cacheState3_10 = new javax.swing.JLabel();
+        cacheState3_11 = new javax.swing.JLabel();
+        cacheState3_12 = new javax.swing.JLabel();
+        cacheState3_13 = new javax.swing.JLabel();
+        cacheState3_14 = new javax.swing.JLabel();
+        cacheState3_15 = new javax.swing.JLabel();
         cache3_Block0 = new javax.swing.JLabel();
         cache3_Block1 = new javax.swing.JLabel();
         cache3_Block2 = new javax.swing.JLabel();
@@ -196,7 +216,7 @@ public class ventana extends javax.swing.JFrame {
         cache3_Block14 = new javax.swing.JLabel();
         cache3_Block15 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel153 = new javax.swing.JLabel();
+        cacheState1_0 = new javax.swing.JLabel();
         jLabel154 = new javax.swing.JLabel();
         jLabel155 = new javax.swing.JLabel();
         jLabel156 = new javax.swing.JLabel();
@@ -213,21 +233,21 @@ public class ventana extends javax.swing.JFrame {
         jLabel167 = new javax.swing.JLabel();
         jLabel168 = new javax.swing.JLabel();
         jLabel169 = new javax.swing.JLabel();
-        jLabel170 = new javax.swing.JLabel();
-        jLabel171 = new javax.swing.JLabel();
-        jLabel172 = new javax.swing.JLabel();
-        jLabel173 = new javax.swing.JLabel();
-        jLabel174 = new javax.swing.JLabel();
-        jLabel175 = new javax.swing.JLabel();
-        jLabel176 = new javax.swing.JLabel();
-        jLabel177 = new javax.swing.JLabel();
-        jLabel178 = new javax.swing.JLabel();
-        jLabel179 = new javax.swing.JLabel();
-        jLabel180 = new javax.swing.JLabel();
-        jLabel181 = new javax.swing.JLabel();
-        jLabel182 = new javax.swing.JLabel();
-        jLabel183 = new javax.swing.JLabel();
-        jLabel184 = new javax.swing.JLabel();
+        cacheState1_1 = new javax.swing.JLabel();
+        cacheState1_2 = new javax.swing.JLabel();
+        cacheState1_3 = new javax.swing.JLabel();
+        cacheState1_4 = new javax.swing.JLabel();
+        cacheState1_5 = new javax.swing.JLabel();
+        cacheState1_6 = new javax.swing.JLabel();
+        cacheState1_7 = new javax.swing.JLabel();
+        cacheState1_9 = new javax.swing.JLabel();
+        cacheState1_8 = new javax.swing.JLabel();
+        cacheState1_10 = new javax.swing.JLabel();
+        cacheState1_11 = new javax.swing.JLabel();
+        cacheState1_12 = new javax.swing.JLabel();
+        cacheState1_13 = new javax.swing.JLabel();
+        cacheState1_14 = new javax.swing.JLabel();
+        cacheState1_15 = new javax.swing.JLabel();
         cache1_Block0 = new javax.swing.JLabel();
         cache1_Block1 = new javax.swing.JLabel();
         cache1_Block2 = new javax.swing.JLabel();
@@ -246,8 +266,8 @@ public class ventana extends javax.swing.JFrame {
         cache1_Block15 = new javax.swing.JLabel();
         jLabel201 = new javax.swing.JLabel();
         jLabel202 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel203 = new javax.swing.JLabel();
+        memPanel = new javax.swing.JPanel();
+        memiD0 = new javax.swing.JLabel();
         jLabel204 = new javax.swing.JLabel();
         jLabel205 = new javax.swing.JLabel();
         jLabel206 = new javax.swing.JLabel();
@@ -264,21 +284,21 @@ public class ventana extends javax.swing.JFrame {
         jLabel217 = new javax.swing.JLabel();
         jLabel218 = new javax.swing.JLabel();
         jLabel219 = new javax.swing.JLabel();
-        jLabel220 = new javax.swing.JLabel();
-        jLabel221 = new javax.swing.JLabel();
-        jLabel222 = new javax.swing.JLabel();
-        jLabel223 = new javax.swing.JLabel();
-        jLabel224 = new javax.swing.JLabel();
-        jLabel225 = new javax.swing.JLabel();
-        jLabel226 = new javax.swing.JLabel();
-        jLabel227 = new javax.swing.JLabel();
-        jLabel228 = new javax.swing.JLabel();
-        jLabel229 = new javax.swing.JLabel();
-        jLabel230 = new javax.swing.JLabel();
-        jLabel231 = new javax.swing.JLabel();
-        jLabel232 = new javax.swing.JLabel();
-        jLabel233 = new javax.swing.JLabel();
-        jLabel234 = new javax.swing.JLabel();
+        memiD1 = new javax.swing.JLabel();
+        memiD2 = new javax.swing.JLabel();
+        memiD3 = new javax.swing.JLabel();
+        memiD4 = new javax.swing.JLabel();
+        memiD5 = new javax.swing.JLabel();
+        memiD6 = new javax.swing.JLabel();
+        memiD7 = new javax.swing.JLabel();
+        memiD8 = new javax.swing.JLabel();
+        memiD9 = new javax.swing.JLabel();
+        memiD10 = new javax.swing.JLabel();
+        memiD11 = new javax.swing.JLabel();
+        memiD12 = new javax.swing.JLabel();
+        memiD13 = new javax.swing.JLabel();
+        memiD14 = new javax.swing.JLabel();
+        memiD15 = new javax.swing.JLabel();
         memoryBlock0 = new javax.swing.JLabel();
         memoryBlock1 = new javax.swing.JLabel();
         memoryBlock2 = new javax.swing.JLabel();
@@ -322,7 +342,7 @@ public class ventana extends javax.swing.JFrame {
         jPanel1.setBackground(java.awt.Color.lightGray);
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jLabel4.setText("v");
+        cacheState2_0.setText("v");
 
         jLabel10.setText("0x0");
 
@@ -356,35 +376,35 @@ public class ventana extends javax.swing.JFrame {
 
         jLabel25.setText("0xf");
 
-        jLabel26.setText("v");
+        cacheState2_1.setText("v");
 
-        jLabel27.setText("v");
+        cacheState2_2.setText("v");
 
-        jLabel28.setText("v");
+        cacheState2_3.setText("v");
 
-        jLabel29.setText("v");
+        cacheState2_4.setText("v");
 
-        jLabel30.setText("v");
+        cacheState2_5.setText("v");
 
-        jLabel31.setText("v");
+        cacheState2_6.setText("v");
 
-        jLabel32.setText("v");
+        cacheState2_7.setText("v");
 
-        jLabel33.setText("v");
+        cacheState2_8.setText("v");
 
-        jLabel34.setText("v");
+        cacheState2_9.setText("v");
 
-        jLabel35.setText("v");
+        cacheState2_10.setText("v");
 
-        jLabel36.setText("v");
+        cacheState2_11.setText("v");
 
-        jLabel37.setText("v");
+        cacheState2_12.setText("v");
 
-        jLabel38.setText("v");
+        cacheState2_13.setText("v");
 
-        jLabel39.setText("v");
+        cacheState2_14.setText("v");
 
-        jLabel40.setText("v");
+        cacheState2_15.setText("v");
 
         cache2_Block0.setText("jLabel41");
 
@@ -426,68 +446,68 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel38)
+                        .addComponent(cacheState2_13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel23))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel37)
+                        .addComponent(cacheState2_12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel22))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel36)
+                        .addComponent(cacheState2_11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel21))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel35)
+                        .addComponent(cacheState2_10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel20))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel34)
+                        .addComponent(cacheState2_9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel19))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel33)
+                        .addComponent(cacheState2_8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel18))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel32)
+                        .addComponent(cacheState2_7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel17))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel31)
+                        .addComponent(cacheState2_6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel16))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel30)
+                        .addComponent(cacheState2_5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel15))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel29)
+                        .addComponent(cacheState2_4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel14))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel28)
+                        .addComponent(cacheState2_3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel13))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cacheState2_0, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel27)
+                                .addComponent(cacheState2_2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel12))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel26)
+                        .addComponent(cacheState2_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel11))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel39)
-                            .addComponent(jLabel40))
+                            .addComponent(cacheState2_14)
+                            .addComponent(cacheState2_15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel25)
@@ -517,85 +537,85 @@ public class ventana extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(cacheState2_0)
                     .addComponent(jLabel10)
                     .addComponent(cache2_Block0))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel26)
+                        .addComponent(cacheState2_1)
                         .addComponent(cache2_Block1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
-                    .addComponent(jLabel27)
+                    .addComponent(cacheState2_2)
                     .addComponent(cache2_Block2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(jLabel28)
+                    .addComponent(cacheState2_3)
                     .addComponent(cache2_Block3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jLabel29)
+                    .addComponent(cacheState2_4)
                     .addComponent(cache2_Block4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
-                    .addComponent(jLabel30)
+                    .addComponent(cacheState2_5)
                     .addComponent(cache2_Block5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel31)
+                        .addComponent(cacheState2_6)
                         .addComponent(cache2_Block6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel17)
-                    .addComponent(jLabel32)
+                    .addComponent(cacheState2_7)
                     .addComponent(cache2_Block7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel18)
-                    .addComponent(jLabel33)
+                    .addComponent(cacheState2_8)
                     .addComponent(cache2_Block8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
-                    .addComponent(jLabel34)
+                    .addComponent(cacheState2_9)
                     .addComponent(cache2_Block9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel20)
-                    .addComponent(jLabel35)
+                    .addComponent(cacheState2_10)
                     .addComponent(cache2_Block10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel21)
-                    .addComponent(jLabel36)
+                    .addComponent(cacheState2_11)
                     .addComponent(cache2_Block11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel22)
-                    .addComponent(jLabel37)
+                    .addComponent(cacheState2_12)
                     .addComponent(cache2_Block12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel23)
-                    .addComponent(jLabel38)
+                    .addComponent(cacheState2_13)
                     .addComponent(cache2_Block13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel24)
-                    .addComponent(jLabel39)
+                    .addComponent(cacheState2_14)
                     .addComponent(cache2_Block14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel25)
-                    .addComponent(jLabel40)
+                    .addComponent(cacheState2_15)
                     .addComponent(cache2_Block15))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -611,7 +631,7 @@ public class ventana extends javax.swing.JFrame {
         jPanel2.setBackground(java.awt.Color.lightGray);
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jLabel57.setText("v");
+        cacheState4_0.setText("v");
 
         jLabel58.setText("0x0");
 
@@ -645,35 +665,35 @@ public class ventana extends javax.swing.JFrame {
 
         jLabel73.setText("0xf");
 
-        jLabel74.setText("v");
+        cacheState4_1.setText("v");
 
-        jLabel75.setText("v");
+        cacheState4_2.setText("v");
 
-        jLabel76.setText("v");
+        cacheState4_3.setText("v");
 
-        jLabel77.setText("v");
+        cacheState4_4.setText("v");
 
-        jLabel78.setText("v");
+        cacheState4_5.setText("v");
 
-        jLabel79.setText("v");
+        cacheState4_6.setText("v");
 
-        jLabel80.setText("v");
+        cacheState4_7.setText("v");
 
-        jLabel81.setText("v");
+        cacheState4_8.setText("v");
 
-        jLabel82.setText("v");
+        cacheState4_9.setText("v");
 
-        jLabel83.setText("v");
+        cacheState4_10.setText("v");
 
-        jLabel84.setText("v");
+        cacheState4_11.setText("v");
 
-        jLabel85.setText("v");
+        cacheState4_12.setText("v");
 
-        jLabel86.setText("v");
+        cacheState4_13.setText("v");
 
-        jLabel87.setText("v");
+        cacheState4_14.setText("v");
 
-        jLabel88.setText("v");
+        cacheState4_15.setText("v");
 
         cache4_Block0.setText("jLabel41");
 
@@ -715,68 +735,68 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel86)
+                        .addComponent(cacheState4_13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel71))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel85)
+                        .addComponent(cacheState4_12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel70))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel84)
+                        .addComponent(cacheState4_11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel69))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel83)
+                        .addComponent(cacheState4_10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel68))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel82)
+                        .addComponent(cacheState4_9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel67))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel81)
+                        .addComponent(cacheState4_8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel66))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel80)
+                        .addComponent(cacheState4_7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel65))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel79)
+                        .addComponent(cacheState4_6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel64))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel78)
+                        .addComponent(cacheState4_5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel63))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel77)
+                        .addComponent(cacheState4_4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel62))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel76)
+                        .addComponent(cacheState4_3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel61))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cacheState4_0, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel58))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel75)
+                                .addComponent(cacheState4_2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel60))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel74)
+                        .addComponent(cacheState4_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel59))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel87)
-                            .addComponent(jLabel88))
+                            .addComponent(cacheState4_14)
+                            .addComponent(cacheState4_15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel73)
@@ -806,85 +826,85 @@ public class ventana extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel57)
+                    .addComponent(cacheState4_0)
                     .addComponent(jLabel58)
                     .addComponent(cache4_Block0))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel59, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel74)
+                        .addComponent(cacheState4_1)
                         .addComponent(cache4_Block1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel60)
-                    .addComponent(jLabel75)
+                    .addComponent(cacheState4_2)
                     .addComponent(cache4_Block2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel61)
-                    .addComponent(jLabel76)
+                    .addComponent(cacheState4_3)
                     .addComponent(cache4_Block3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel62)
-                    .addComponent(jLabel77)
+                    .addComponent(cacheState4_4)
                     .addComponent(cache4_Block4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel63)
-                    .addComponent(jLabel78)
+                    .addComponent(cacheState4_5)
                     .addComponent(cache4_Block5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel64)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel79)
+                        .addComponent(cacheState4_6)
                         .addComponent(cache4_Block6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel65)
-                    .addComponent(jLabel80)
+                    .addComponent(cacheState4_7)
                     .addComponent(cache4_Block7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel66)
-                    .addComponent(jLabel81)
+                    .addComponent(cacheState4_8)
                     .addComponent(cache4_Block8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel67)
-                    .addComponent(jLabel82)
+                    .addComponent(cacheState4_9)
                     .addComponent(cache4_Block9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel68)
-                    .addComponent(jLabel83)
+                    .addComponent(cacheState4_10)
                     .addComponent(cache4_Block10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel69)
-                    .addComponent(jLabel84)
+                    .addComponent(cacheState4_11)
                     .addComponent(cache4_Block11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel70)
-                    .addComponent(jLabel85)
+                    .addComponent(cacheState4_12)
                     .addComponent(cache4_Block12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel71)
-                    .addComponent(jLabel86)
+                    .addComponent(cacheState4_13)
                     .addComponent(cache4_Block13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel72)
-                    .addComponent(jLabel87)
+                    .addComponent(cacheState4_14)
                     .addComponent(cache4_Block14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel73)
-                    .addComponent(jLabel88)
+                    .addComponent(cacheState4_15)
                     .addComponent(cache4_Block15))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -892,7 +912,7 @@ public class ventana extends javax.swing.JFrame {
         jPanel3.setBackground(java.awt.Color.lightGray);
         jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jLabel105.setText("v");
+        cacheState3_0.setText("v");
 
         jLabel106.setText("0x0");
 
@@ -926,35 +946,35 @@ public class ventana extends javax.swing.JFrame {
 
         jLabel121.setText("0xf");
 
-        jLabel122.setText("v");
+        cacheState3_1.setText("v");
 
-        jLabel123.setText("v");
+        cacheState3_2.setText("v");
 
-        jLabel124.setText("v");
+        cacheState3_3.setText("v");
 
-        jLabel125.setText("v");
+        cacheState3_4.setText("v");
 
-        jLabel126.setText("v");
+        cacheState3_5.setText("v");
 
-        jLabel127.setText("v");
+        cacheState3_6.setText("v");
 
-        jLabel128.setText("v");
+        cacheState3_7.setText("v");
 
-        jLabel129.setText("v");
+        cacheState3_8.setText("v");
 
-        jLabel130.setText("v");
+        cacheState3_9.setText("v");
 
-        jLabel131.setText("v");
+        cacheState3_10.setText("v");
 
-        jLabel132.setText("v");
+        cacheState3_11.setText("v");
 
-        jLabel133.setText("v");
+        cacheState3_12.setText("v");
 
-        jLabel134.setText("v");
+        cacheState3_13.setText("v");
 
-        jLabel135.setText("v");
+        cacheState3_14.setText("v");
 
-        jLabel136.setText("v");
+        cacheState3_15.setText("v");
 
         cache3_Block0.setText("jLabel41");
 
@@ -996,68 +1016,68 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel134)
+                        .addComponent(cacheState3_13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel119))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel133)
+                        .addComponent(cacheState3_12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel118))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel132)
+                        .addComponent(cacheState3_11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel117))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel131)
+                        .addComponent(cacheState3_10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel116))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel130)
+                        .addComponent(cacheState3_9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel115))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel129)
+                        .addComponent(cacheState3_8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel114))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel128)
+                        .addComponent(cacheState3_7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel113))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel127)
+                        .addComponent(cacheState3_6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel112))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel126)
+                        .addComponent(cacheState3_5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel111))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel125)
+                        .addComponent(cacheState3_4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel110))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel124)
+                        .addComponent(cacheState3_3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel109))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel105, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cacheState3_0, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel106))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel123)
+                                .addComponent(cacheState3_2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel108))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addComponent(jLabel122)
+                        .addComponent(cacheState3_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel107))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel135)
-                            .addComponent(jLabel136))
+                            .addComponent(cacheState3_14)
+                            .addComponent(cacheState3_15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel121)
@@ -1087,85 +1107,85 @@ public class ventana extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel105)
+                    .addComponent(cacheState3_0)
                     .addComponent(jLabel106)
                     .addComponent(cache3_Block0))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel107, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel122)
+                        .addComponent(cacheState3_1)
                         .addComponent(cache3_Block1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel108)
-                    .addComponent(jLabel123)
+                    .addComponent(cacheState3_2)
                     .addComponent(cache3_Block2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel109)
-                    .addComponent(jLabel124)
+                    .addComponent(cacheState3_3)
                     .addComponent(cache3_Block3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel110)
-                    .addComponent(jLabel125)
+                    .addComponent(cacheState3_4)
                     .addComponent(cache3_Block4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel111)
-                    .addComponent(jLabel126)
+                    .addComponent(cacheState3_5)
                     .addComponent(cache3_Block5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel112)
                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel127)
+                        .addComponent(cacheState3_6)
                         .addComponent(cache3_Block6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel113)
-                    .addComponent(jLabel128)
+                    .addComponent(cacheState3_7)
                     .addComponent(cache3_Block7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel114)
-                    .addComponent(jLabel129)
+                    .addComponent(cacheState3_8)
                     .addComponent(cache3_Block8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel115)
-                    .addComponent(jLabel130)
+                    .addComponent(cacheState3_9)
                     .addComponent(cache3_Block9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel116)
-                    .addComponent(jLabel131)
+                    .addComponent(cacheState3_10)
                     .addComponent(cache3_Block10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel117)
-                    .addComponent(jLabel132)
+                    .addComponent(cacheState3_11)
                     .addComponent(cache3_Block11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel118)
-                    .addComponent(jLabel133)
+                    .addComponent(cacheState3_12)
                     .addComponent(cache3_Block12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel119)
-                    .addComponent(jLabel134)
+                    .addComponent(cacheState3_13)
                     .addComponent(cache3_Block13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel120)
-                    .addComponent(jLabel135)
+                    .addComponent(cacheState3_14)
                     .addComponent(cache3_Block14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel121)
-                    .addComponent(jLabel136)
+                    .addComponent(cacheState3_15)
                     .addComponent(cache3_Block15))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1173,7 +1193,7 @@ public class ventana extends javax.swing.JFrame {
         jPanel4.setBackground(java.awt.Color.lightGray);
         jPanel4.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jLabel153.setText("v");
+        cacheState1_0.setText("v");
 
         jLabel154.setText("0x0");
 
@@ -1207,35 +1227,35 @@ public class ventana extends javax.swing.JFrame {
 
         jLabel169.setText("0xf");
 
-        jLabel170.setText("v");
+        cacheState1_1.setText("v");
 
-        jLabel171.setText("v");
+        cacheState1_2.setText("v");
 
-        jLabel172.setText("v");
+        cacheState1_3.setText("v");
 
-        jLabel173.setText("v");
+        cacheState1_4.setText("v");
 
-        jLabel174.setText("v");
+        cacheState1_5.setText("v");
 
-        jLabel175.setText("v");
+        cacheState1_6.setText("v");
 
-        jLabel176.setText("v");
+        cacheState1_7.setText("v");
 
-        jLabel177.setText("v");
+        cacheState1_9.setText("v");
 
-        jLabel178.setText("v");
+        cacheState1_8.setText("v");
 
-        jLabel179.setText("v");
+        cacheState1_10.setText("v");
 
-        jLabel180.setText("v");
+        cacheState1_11.setText("v");
 
-        jLabel181.setText("v");
+        cacheState1_12.setText("v");
 
-        jLabel182.setText("v");
+        cacheState1_13.setText("v");
 
-        jLabel183.setText("v");
+        cacheState1_14.setText("v");
 
-        jLabel184.setText("v");
+        cacheState1_15.setText("v");
 
         cache1_Block0.setText("jLabel41");
 
@@ -1277,68 +1297,68 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel182)
+                        .addComponent(cacheState1_13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel167))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel181)
+                        .addComponent(cacheState1_12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel166))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel180)
+                        .addComponent(cacheState1_11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel165))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel179)
+                        .addComponent(cacheState1_10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel164))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel178)
+                        .addComponent(cacheState1_9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel163))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel177)
+                        .addComponent(cacheState1_8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel162))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel176)
+                        .addComponent(cacheState1_7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel161))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel175)
+                        .addComponent(cacheState1_6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel160))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel174)
+                        .addComponent(cacheState1_5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel159))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel173)
+                        .addComponent(cacheState1_4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel158))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel172)
+                        .addComponent(cacheState1_3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel157))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel153, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cacheState1_0, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel154))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                                .addComponent(jLabel171)
+                                .addComponent(cacheState1_2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel156))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel170)
+                        .addComponent(cacheState1_1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel155))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel183)
-                            .addComponent(jLabel184))
+                            .addComponent(cacheState1_14)
+                            .addComponent(cacheState1_15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel169)
@@ -1368,85 +1388,85 @@ public class ventana extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel153)
+                    .addComponent(cacheState1_0)
                     .addComponent(jLabel154)
                     .addComponent(cache1_Block0))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel155, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel170)
+                        .addComponent(cacheState1_1)
                         .addComponent(cache1_Block1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel156)
-                    .addComponent(jLabel171)
+                    .addComponent(cacheState1_2)
                     .addComponent(cache1_Block2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel157)
-                    .addComponent(jLabel172)
+                    .addComponent(cacheState1_3)
                     .addComponent(cache1_Block3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel158)
-                    .addComponent(jLabel173)
+                    .addComponent(cacheState1_4)
                     .addComponent(cache1_Block4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel159)
-                    .addComponent(jLabel174)
+                    .addComponent(cacheState1_5)
                     .addComponent(cache1_Block5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel160)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel175)
+                        .addComponent(cacheState1_6)
                         .addComponent(cache1_Block6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel161)
-                    .addComponent(jLabel176)
+                    .addComponent(cacheState1_7)
                     .addComponent(cache1_Block7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel162)
-                    .addComponent(jLabel177)
+                    .addComponent(cacheState1_8)
                     .addComponent(cache1_Block8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel163)
-                    .addComponent(jLabel178)
+                    .addComponent(cacheState1_9)
                     .addComponent(cache1_Block9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel164)
-                    .addComponent(jLabel179)
+                    .addComponent(cacheState1_10)
                     .addComponent(cache1_Block10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel165)
-                    .addComponent(jLabel180)
+                    .addComponent(cacheState1_11)
                     .addComponent(cache1_Block11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel166)
-                    .addComponent(jLabel181)
+                    .addComponent(cacheState1_12)
                     .addComponent(cache1_Block12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel167)
-                    .addComponent(jLabel182)
+                    .addComponent(cacheState1_13)
                     .addComponent(cache1_Block13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel168)
-                    .addComponent(jLabel183)
+                    .addComponent(cacheState1_14)
                     .addComponent(cache1_Block14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel169)
-                    .addComponent(jLabel184)
+                    .addComponent(cacheState1_15)
                     .addComponent(cache1_Block15))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1455,10 +1475,10 @@ public class ventana extends javax.swing.JFrame {
 
         jLabel202.setText("Main Memory");
 
-        jPanel5.setBackground(java.awt.Color.yellow);
-        jPanel5.setBorder(new javax.swing.border.MatteBorder(null));
+        memPanel.setBackground(java.awt.Color.yellow);
+        memPanel.setBorder(new javax.swing.border.MatteBorder(null));
 
-        jLabel203.setText("v");
+        memiD0.setText("v");
 
         jLabel204.setText("0x0");
 
@@ -1492,35 +1512,35 @@ public class ventana extends javax.swing.JFrame {
 
         jLabel219.setText("0xf");
 
-        jLabel220.setText("v");
+        memiD1.setText("v");
 
-        jLabel221.setText("v");
+        memiD2.setText("v");
 
-        jLabel222.setText("v");
+        memiD3.setText("v");
 
-        jLabel223.setText("v");
+        memiD4.setText("v");
 
-        jLabel224.setText("v");
+        memiD5.setText("v");
 
-        jLabel225.setText("v");
+        memiD6.setText("v");
 
-        jLabel226.setText("v");
+        memiD7.setText("v");
 
-        jLabel227.setText("v");
+        memiD8.setText("v");
 
-        jLabel228.setText("v");
+        memiD9.setText("v");
 
-        jLabel229.setText("v");
+        memiD10.setText("v");
 
-        jLabel230.setText("v");
+        memiD11.setText("v");
 
-        jLabel231.setText("v");
+        memiD12.setText("v");
 
-        jLabel232.setText("v");
+        memiD13.setText("v");
 
-        jLabel233.setText("v");
+        memiD14.setText("v");
 
-        jLabel234.setText("v");
+        memiD15.setText("v");
 
         memoryBlock0.setText("jLabel41");
 
@@ -1554,82 +1574,82 @@ public class ventana extends javax.swing.JFrame {
 
         memoryBlock15.setText("jLabel56");
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout memPanelLayout = new javax.swing.GroupLayout(memPanel);
+        memPanel.setLayout(memPanelLayout);
+        memPanelLayout.setHorizontalGroup(
+            memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(memPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel232)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD13)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel217))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel231)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD12)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel216))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel230)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD11)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel215))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel229)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel214))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel228)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel213))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel227)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel212))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel226)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel211))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel225)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel210))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel224)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel209))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel223)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel208))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel222)
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel207))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, memPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel203, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, memPanelLayout.createSequentialGroup()
+                                .addComponent(memiD0, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel204))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel221)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, memPanelLayout.createSequentialGroup()
+                                .addComponent(memiD2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel206))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel220)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, memPanelLayout.createSequentialGroup()
+                        .addComponent(memiD1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel205))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel233)
-                            .addComponent(jLabel234))
+                    .addGroup(memPanelLayout.createSequentialGroup()
+                        .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(memiD14)
+                            .addComponent(memiD15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel219)
                             .addComponent(jLabel218))))
                 .addGap(31, 31, 31)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(memoryBlock0)
                     .addComponent(memoryBlock1)
                     .addComponent(memoryBlock2)
@@ -1648,90 +1668,90 @@ public class ventana extends javax.swing.JFrame {
                     .addComponent(memoryBlock15))
                 .addContainerGap(28, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        memPanelLayout.setVerticalGroup(
+            memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(memPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel203)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(memiD0)
                     .addComponent(jLabel204)
                     .addComponent(memoryBlock0))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel205, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel220)
+                    .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(memiD1)
                         .addComponent(memoryBlock1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel206)
-                    .addComponent(jLabel221)
+                    .addComponent(memiD2)
                     .addComponent(memoryBlock2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel207)
-                    .addComponent(jLabel222)
+                    .addComponent(memiD3)
                     .addComponent(memoryBlock3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel208)
-                    .addComponent(jLabel223)
+                    .addComponent(memiD4)
                     .addComponent(memoryBlock4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel209)
-                    .addComponent(jLabel224)
+                    .addComponent(memiD5)
                     .addComponent(memoryBlock5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel210)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel225)
+                    .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(memiD6)
                         .addComponent(memoryBlock6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel211)
-                    .addComponent(jLabel226)
+                    .addComponent(memiD7)
                     .addComponent(memoryBlock7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel212)
-                    .addComponent(jLabel227)
+                    .addComponent(memiD8)
                     .addComponent(memoryBlock8))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel213)
-                    .addComponent(jLabel228)
+                    .addComponent(memiD9)
                     .addComponent(memoryBlock9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel214)
-                    .addComponent(jLabel229)
+                    .addComponent(memiD10)
                     .addComponent(memoryBlock10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel215)
-                    .addComponent(jLabel230)
+                    .addComponent(memiD11)
                     .addComponent(memoryBlock11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel216)
-                    .addComponent(jLabel231)
+                    .addComponent(memiD12)
                     .addComponent(memoryBlock12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel217)
-                    .addComponent(jLabel232)
+                    .addComponent(memiD13)
                     .addComponent(memoryBlock13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel218)
-                    .addComponent(jLabel233)
+                    .addComponent(memiD14)
                     .addComponent(memoryBlock14))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(memPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel219)
-                    .addComponent(jLabel234)
+                    .addComponent(memiD15)
                     .addComponent(memoryBlock15))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1769,7 +1789,7 @@ public class ventana extends javax.swing.JFrame {
                         .addComponent(jLabel5)
                         .addGap(79, 79, 79))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(memPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -1832,7 +1852,7 @@ public class ventana extends javax.swing.JFrame {
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(209, Short.MAX_VALUE))
         );
 
@@ -1840,30 +1860,6 @@ public class ventana extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void stepForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stepForwardButtonActionPerformed
-        // TODO add your handling code here:
-        //cicle_label.setText("se ha apretado el boton");
-        //ProcessorBlock processor = new ProcessorBlock("miCPU");
-        //processor.start();
-
-        while (true) {
-
-            /* System.out.println("bloque-----------------------------------------");
-            System.out.println(String.valueOf(processor.cache.getCacheData(0)));
-            System.out.println(String.valueOf(processor.cache.getCacheData(1)));
-            System.out.println(String.valueOf(processor.cache.getCacheData(2)));
-            System.out.println(String.valueOf(processor.cache.getCacheData(3)));
-            System.out.println(String.valueOf(processor.cache.getCacheData(4)));
-            System.out.println(String.valueOf(processor.cache.getCacheData(5)));
-            System.out.println(String.valueOf(processor.cache.getCacheData(6)));
-            System.out.println(String.valueOf(processor.cache.getCacheData(7)));*/
-            try {
-                TimeUnit.SECONDS.sleep(1);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ventana.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-        }
-
 
     }//GEN-LAST:event_stepForwardButtonActionPerformed
 
@@ -1899,14 +1895,197 @@ public class ventana extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new ventana().setVisible(false);
-
+                new ventana().setVisible(true);
             }
         });
-        //ProcessorBlock processor = new ProcessorBlock(1);
-        //processor.start();
-        MultiprocessorArchitecture a1 = new MultiprocessorArchitecture();
-        a1.start();
+
+    }
+
+    public void updateWindow() {
+        updateMemory();
+        updateCache1();
+        updateCache2();
+        updateCache3();
+        updateCache4();
+    }
+
+    public void updateMemory() {
+        memiD0.setText(String.valueOf(a1.bus.memory.getIdProc(0)));
+        memiD1.setText(String.valueOf(a1.bus.memory.getIdProc(1)));
+        memiD2.setText(String.valueOf(a1.bus.memory.getIdProc(2)));
+        memiD3.setText(String.valueOf(a1.bus.memory.getIdProc(3)));
+        memiD4.setText(String.valueOf(a1.bus.memory.getIdProc(4)));
+        memiD5.setText(String.valueOf(a1.bus.memory.getIdProc(5)));
+        memiD6.setText(String.valueOf(a1.bus.memory.getIdProc(6)));
+        memiD7.setText(String.valueOf(a1.bus.memory.getIdProc(7)));
+        memiD8.setText(String.valueOf(a1.bus.memory.getIdProc(8)));
+        memiD9.setText(String.valueOf(a1.bus.memory.getIdProc(9)));
+        memiD10.setText(String.valueOf(a1.bus.memory.getIdProc(10)));
+        memiD11.setText(String.valueOf(a1.bus.memory.getIdProc(11)));
+        memiD12.setText(String.valueOf(a1.bus.memory.getIdProc(12)));
+        memiD13.setText(String.valueOf(a1.bus.memory.getIdProc(13)));
+        memiD14.setText(String.valueOf(a1.bus.memory.getIdProc(14)));
+        memiD15.setText(String.valueOf(a1.bus.memory.getIdProc(15)));
+
+        memoryBlock0.setText(String.valueOf(a1.bus.memory.readData(0)));
+        memoryBlock1.setText(String.valueOf(a1.bus.memory.readData(1)));
+        memoryBlock2.setText(String.valueOf(a1.bus.memory.readData(2)));
+        memoryBlock3.setText(String.valueOf(a1.bus.memory.readData(3)));
+        memoryBlock4.setText(String.valueOf(a1.bus.memory.readData(4)));
+        memoryBlock5.setText(String.valueOf(a1.bus.memory.readData(5)));
+        memoryBlock6.setText(String.valueOf(a1.bus.memory.readData(6)));
+        memoryBlock7.setText(String.valueOf(a1.bus.memory.readData(7)));
+        memoryBlock8.setText(String.valueOf(a1.bus.memory.readData(8)));
+        memoryBlock9.setText(String.valueOf(a1.bus.memory.readData(9)));
+        memoryBlock10.setText(String.valueOf(a1.bus.memory.readData(10)));
+        memoryBlock11.setText(String.valueOf(a1.bus.memory.readData(11)));
+        memoryBlock12.setText(String.valueOf(a1.bus.memory.readData(12)));
+        memoryBlock13.setText(String.valueOf(a1.bus.memory.readData(13)));
+        memoryBlock14.setText(String.valueOf(a1.bus.memory.readData(14)));
+        memoryBlock15.setText(String.valueOf(a1.bus.memory.readData(15)));
+
+    }
+
+    public void updateCache1() {
+        cache1_Block0.setText(String.valueOf(a1.block1.controller.cache.getCacheData(0)));
+        cacheState1_0.setText(String.valueOf(a1.block1.controller.cache.getCacheState(0)));
+        cache1_Block1.setText(String.valueOf(a1.block1.controller.cache.getCacheData(1)));
+        cacheState1_1.setText(String.valueOf(a1.block1.controller.cache.getCacheState(1)));
+        cache1_Block2.setText(String.valueOf(a1.block1.controller.cache.getCacheData(2)));
+        cacheState1_2.setText(String.valueOf(a1.block1.controller.cache.getCacheState(2)));
+        cache1_Block3.setText(String.valueOf(a1.block1.controller.cache.getCacheData(3)));
+        cacheState1_3.setText(String.valueOf(a1.block1.controller.cache.getCacheState(3)));
+        cache1_Block4.setText(String.valueOf(a1.block1.controller.cache.getCacheData(4)));
+        cacheState1_4.setText(String.valueOf(a1.block1.controller.cache.getCacheState(4)));
+        cache1_Block5.setText(String.valueOf(a1.block1.controller.cache.getCacheData(5)));
+        cacheState1_5.setText(String.valueOf(a1.block1.controller.cache.getCacheState(5)));
+        cache1_Block6.setText(String.valueOf(a1.block1.controller.cache.getCacheData(6)));
+        cacheState1_6.setText(String.valueOf(a1.block1.controller.cache.getCacheState(6)));
+        cache1_Block7.setText(String.valueOf(a1.block1.controller.cache.getCacheData(7)));
+        cacheState1_7.setText(String.valueOf(a1.block1.controller.cache.getCacheState(7)));
+        cache1_Block8.setText(String.valueOf(a1.block1.controller.cache.getCacheData(8)));
+        cacheState1_8.setText(String.valueOf(a1.block1.controller.cache.getCacheState(8)));
+        cache1_Block9.setText(String.valueOf(a1.block1.controller.cache.getCacheData(9)));
+        cacheState1_9.setText(String.valueOf(a1.block1.controller.cache.getCacheState(9)));
+        cache1_Block10.setText(String.valueOf(a1.block1.controller.cache.getCacheData(10)));
+        cacheState1_10.setText(String.valueOf(a1.block1.controller.cache.getCacheState(10)));
+        cache1_Block11.setText(String.valueOf(a1.block1.controller.cache.getCacheData(11)));
+        cacheState1_11.setText(String.valueOf(a1.block1.controller.cache.getCacheState(11)));
+        cache1_Block12.setText(String.valueOf(a1.block1.controller.cache.getCacheData(12)));
+        cacheState1_12.setText(String.valueOf(a1.block1.controller.cache.getCacheState(12)));
+        cache1_Block13.setText(String.valueOf(a1.block1.controller.cache.getCacheData(13)));
+        cacheState1_13.setText(String.valueOf(a1.block1.controller.cache.getCacheState(13)));
+        cache1_Block14.setText(String.valueOf(a1.block1.controller.cache.getCacheData(14)));
+        cacheState1_14.setText(String.valueOf(a1.block1.controller.cache.getCacheState(14)));
+        cache1_Block15.setText(String.valueOf(a1.block1.controller.cache.getCacheData(15)));
+        cacheState1_15.setText(String.valueOf(a1.block1.controller.cache.getCacheState(15)));
+
+    }
+
+    public void updateCache2() {
+
+        cache2_Block0.setText(String.valueOf(a1.block2.controller.cache.getCacheData(0)));
+        cacheState2_0.setText(String.valueOf(a1.block2.controller.cache.getCacheState(0)));
+        cache2_Block1.setText(String.valueOf(a1.block2.controller.cache.getCacheData(1)));
+        cacheState2_1.setText(String.valueOf(a1.block2.controller.cache.getCacheState(1)));
+        cache2_Block2.setText(String.valueOf(a1.block2.controller.cache.getCacheData(2)));
+        cacheState2_2.setText(String.valueOf(a1.block2.controller.cache.getCacheState(2)));
+        cache2_Block3.setText(String.valueOf(a1.block2.controller.cache.getCacheData(3)));
+        cacheState2_3.setText(String.valueOf(a1.block2.controller.cache.getCacheState(3)));
+        cache2_Block4.setText(String.valueOf(a1.block2.controller.cache.getCacheData(4)));
+        cacheState2_4.setText(String.valueOf(a1.block2.controller.cache.getCacheState(4)));
+        cache2_Block5.setText(String.valueOf(a1.block2.controller.cache.getCacheData(5)));
+        cacheState2_5.setText(String.valueOf(a1.block2.controller.cache.getCacheState(5)));
+        cache2_Block6.setText(String.valueOf(a1.block2.controller.cache.getCacheData(6)));
+        cacheState2_6.setText(String.valueOf(a1.block2.controller.cache.getCacheState(6)));
+        cache2_Block7.setText(String.valueOf(a1.block2.controller.cache.getCacheData(7)));
+        cacheState2_7.setText(String.valueOf(a1.block2.controller.cache.getCacheState(7)));
+        cache2_Block8.setText(String.valueOf(a1.block2.controller.cache.getCacheData(8)));
+        cacheState2_8.setText(String.valueOf(a1.block2.controller.cache.getCacheState(8)));
+        cache2_Block9.setText(String.valueOf(a1.block2.controller.cache.getCacheData(9)));
+        cacheState2_9.setText(String.valueOf(a1.block2.controller.cache.getCacheState(9)));
+        cache2_Block10.setText(String.valueOf(a1.block2.controller.cache.getCacheData(10)));
+        cacheState2_10.setText(String.valueOf(a1.block2.controller.cache.getCacheState(10)));
+        cache2_Block11.setText(String.valueOf(a1.block2.controller.cache.getCacheData(11)));
+        cacheState2_11.setText(String.valueOf(a1.block2.controller.cache.getCacheState(11)));
+        cache2_Block12.setText(String.valueOf(a1.block2.controller.cache.getCacheData(12)));
+        cacheState2_12.setText(String.valueOf(a1.block2.controller.cache.getCacheState(12)));
+        cache2_Block13.setText(String.valueOf(a1.block2.controller.cache.getCacheData(13)));
+        cacheState2_13.setText(String.valueOf(a1.block2.controller.cache.getCacheState(13)));
+        cache2_Block14.setText(String.valueOf(a1.block2.controller.cache.getCacheData(14)));
+        cacheState2_14.setText(String.valueOf(a1.block2.controller.cache.getCacheState(14)));
+        cache2_Block15.setText(String.valueOf(a1.block2.controller.cache.getCacheData(15)));
+        cacheState2_15.setText(String.valueOf(a1.block2.controller.cache.getCacheState(15)));
+    }
+
+    public void updateCache3() {
+        cache3_Block0.setText(String.valueOf(a1.block3.controller.cache.getCacheData(0)));
+        cacheState3_0.setText(String.valueOf(a1.block3.controller.cache.getCacheState(0)));
+        cache3_Block1.setText(String.valueOf(a1.block3.controller.cache.getCacheData(1)));
+        cacheState3_1.setText(String.valueOf(a1.block3.controller.cache.getCacheState(1)));
+        cache3_Block2.setText(String.valueOf(a1.block3.controller.cache.getCacheData(2)));
+        cacheState3_2.setText(String.valueOf(a1.block3.controller.cache.getCacheState(2)));
+        cache3_Block3.setText(String.valueOf(a1.block3.controller.cache.getCacheData(3)));
+        cacheState3_3.setText(String.valueOf(a1.block3.controller.cache.getCacheState(3)));
+        cache3_Block4.setText(String.valueOf(a1.block3.controller.cache.getCacheData(4)));
+        cacheState3_4.setText(String.valueOf(a1.block3.controller.cache.getCacheState(4)));
+        cache3_Block5.setText(String.valueOf(a1.block3.controller.cache.getCacheData(5)));
+        cacheState3_5.setText(String.valueOf(a1.block3.controller.cache.getCacheState(5)));
+        cache3_Block6.setText(String.valueOf(a1.block3.controller.cache.getCacheData(6)));
+        cacheState3_6.setText(String.valueOf(a1.block3.controller.cache.getCacheState(6)));
+        cache3_Block7.setText(String.valueOf(a1.block3.controller.cache.getCacheData(7)));
+        cacheState3_7.setText(String.valueOf(a1.block3.controller.cache.getCacheState(7)));
+        cache3_Block8.setText(String.valueOf(a1.block3.controller.cache.getCacheData(8)));
+        cacheState3_8.setText(String.valueOf(a1.block3.controller.cache.getCacheState(8)));
+        cache3_Block9.setText(String.valueOf(a1.block3.controller.cache.getCacheData(9)));
+        cacheState3_9.setText(String.valueOf(a1.block3.controller.cache.getCacheState(9)));
+        cache3_Block10.setText(String.valueOf(a1.block3.controller.cache.getCacheData(10)));
+        cacheState3_10.setText(String.valueOf(a1.block3.controller.cache.getCacheState(10)));
+        cache3_Block11.setText(String.valueOf(a1.block3.controller.cache.getCacheData(11)));
+        cacheState3_11.setText(String.valueOf(a1.block3.controller.cache.getCacheState(11)));
+        cache3_Block12.setText(String.valueOf(a1.block3.controller.cache.getCacheData(12)));
+        cacheState3_12.setText(String.valueOf(a1.block3.controller.cache.getCacheState(12)));
+        cache3_Block13.setText(String.valueOf(a1.block3.controller.cache.getCacheData(13)));
+        cacheState3_13.setText(String.valueOf(a1.block3.controller.cache.getCacheState(13)));
+        cache3_Block14.setText(String.valueOf(a1.block3.controller.cache.getCacheData(14)));
+        cacheState3_14.setText(String.valueOf(a1.block3.controller.cache.getCacheState(14)));
+        cache3_Block15.setText(String.valueOf(a1.block3.controller.cache.getCacheData(15)));
+        cacheState3_15.setText(String.valueOf(a1.block3.controller.cache.getCacheState(15)));
+    }
+
+    public void updateCache4() {
+        cache4_Block0.setText(String.valueOf(a1.block4.controller.cache.getCacheData(0)));
+        cacheState4_0.setText(String.valueOf(a1.block4.controller.cache.getCacheState(0)));
+        cache4_Block1.setText(String.valueOf(a1.block4.controller.cache.getCacheData(1)));
+        cacheState4_1.setText(String.valueOf(a1.block4.controller.cache.getCacheState(1)));
+        cache4_Block2.setText(String.valueOf(a1.block4.controller.cache.getCacheData(2)));
+        cacheState4_2.setText(String.valueOf(a1.block4.controller.cache.getCacheState(2)));
+        cache4_Block3.setText(String.valueOf(a1.block4.controller.cache.getCacheData(3)));
+        cacheState4_3.setText(String.valueOf(a1.block4.controller.cache.getCacheState(3)));
+        cache4_Block4.setText(String.valueOf(a1.block4.controller.cache.getCacheData(4)));
+        cacheState4_4.setText(String.valueOf(a1.block4.controller.cache.getCacheState(4)));
+        cache4_Block5.setText(String.valueOf(a1.block4.controller.cache.getCacheData(5)));
+        cacheState4_5.setText(String.valueOf(a1.block4.controller.cache.getCacheState(5)));
+        cache4_Block6.setText(String.valueOf(a1.block4.controller.cache.getCacheData(6)));
+        cacheState4_6.setText(String.valueOf(a1.block4.controller.cache.getCacheState(6)));
+        cache4_Block7.setText(String.valueOf(a1.block4.controller.cache.getCacheData(7)));
+        cacheState4_7.setText(String.valueOf(a1.block4.controller.cache.getCacheState(7)));
+        cache4_Block8.setText(String.valueOf(a1.block4.controller.cache.getCacheData(8)));
+        cacheState4_8.setText(String.valueOf(a1.block4.controller.cache.getCacheState(8)));
+        cache4_Block9.setText(String.valueOf(a1.block4.controller.cache.getCacheData(9)));
+        cacheState4_9.setText(String.valueOf(a1.block4.controller.cache.getCacheState(9)));
+        cache4_Block10.setText(String.valueOf(a1.block4.controller.cache.getCacheData(10)));
+        cacheState4_10.setText(String.valueOf(a1.block4.controller.cache.getCacheState(10)));
+        cache4_Block11.setText(String.valueOf(a1.block4.controller.cache.getCacheData(11)));
+        cacheState4_11.setText(String.valueOf(a1.block4.controller.cache.getCacheState(11)));
+        cache4_Block12.setText(String.valueOf(a1.block4.controller.cache.getCacheData(12)));
+        cacheState4_12.setText(String.valueOf(a1.block4.controller.cache.getCacheState(12)));
+        cache4_Block13.setText(String.valueOf(a1.block4.controller.cache.getCacheData(13)));
+        cacheState4_13.setText(String.valueOf(a1.block4.controller.cache.getCacheState(13)));
+        cache4_Block14.setText(String.valueOf(a1.block4.controller.cache.getCacheData(14)));
+        cacheState4_14.setText(String.valueOf(a1.block4.controller.cache.getCacheState(14)));
+        cache4_Block15.setText(String.valueOf(a1.block4.controller.cache.getCacheData(15)));
+        cacheState4_15.setText(String.valueOf(a1.block4.controller.cache.getCacheState(15)));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1974,11 +2153,74 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel cache4_Block7;
     private javax.swing.JLabel cache4_Block8;
     private javax.swing.JLabel cache4_Block9;
+    private javax.swing.JLabel cacheState1_0;
+    private javax.swing.JLabel cacheState1_1;
+    private javax.swing.JLabel cacheState1_10;
+    private javax.swing.JLabel cacheState1_11;
+    private javax.swing.JLabel cacheState1_12;
+    private javax.swing.JLabel cacheState1_13;
+    private javax.swing.JLabel cacheState1_14;
+    private javax.swing.JLabel cacheState1_15;
+    private javax.swing.JLabel cacheState1_2;
+    private javax.swing.JLabel cacheState1_3;
+    private javax.swing.JLabel cacheState1_4;
+    private javax.swing.JLabel cacheState1_5;
+    private javax.swing.JLabel cacheState1_6;
+    private javax.swing.JLabel cacheState1_7;
+    private javax.swing.JLabel cacheState1_8;
+    private javax.swing.JLabel cacheState1_9;
+    private javax.swing.JLabel cacheState2_0;
+    private javax.swing.JLabel cacheState2_1;
+    private javax.swing.JLabel cacheState2_10;
+    private javax.swing.JLabel cacheState2_11;
+    private javax.swing.JLabel cacheState2_12;
+    private javax.swing.JLabel cacheState2_13;
+    private javax.swing.JLabel cacheState2_14;
+    private javax.swing.JLabel cacheState2_15;
+    private javax.swing.JLabel cacheState2_2;
+    private javax.swing.JLabel cacheState2_3;
+    private javax.swing.JLabel cacheState2_4;
+    private javax.swing.JLabel cacheState2_5;
+    private javax.swing.JLabel cacheState2_6;
+    private javax.swing.JLabel cacheState2_7;
+    private javax.swing.JLabel cacheState2_8;
+    private javax.swing.JLabel cacheState2_9;
+    private javax.swing.JLabel cacheState3_0;
+    private javax.swing.JLabel cacheState3_1;
+    private javax.swing.JLabel cacheState3_10;
+    private javax.swing.JLabel cacheState3_11;
+    private javax.swing.JLabel cacheState3_12;
+    private javax.swing.JLabel cacheState3_13;
+    private javax.swing.JLabel cacheState3_14;
+    private javax.swing.JLabel cacheState3_15;
+    private javax.swing.JLabel cacheState3_2;
+    private javax.swing.JLabel cacheState3_3;
+    private javax.swing.JLabel cacheState3_4;
+    private javax.swing.JLabel cacheState3_5;
+    private javax.swing.JLabel cacheState3_6;
+    private javax.swing.JLabel cacheState3_7;
+    private javax.swing.JLabel cacheState3_8;
+    private javax.swing.JLabel cacheState3_9;
+    private javax.swing.JLabel cacheState4_0;
+    private javax.swing.JLabel cacheState4_1;
+    private javax.swing.JLabel cacheState4_10;
+    private javax.swing.JLabel cacheState4_11;
+    private javax.swing.JLabel cacheState4_12;
+    private javax.swing.JLabel cacheState4_13;
+    private javax.swing.JLabel cacheState4_14;
+    private javax.swing.JLabel cacheState4_15;
+    private javax.swing.JLabel cacheState4_2;
+    private javax.swing.JLabel cacheState4_3;
+    private javax.swing.JLabel cacheState4_4;
+    private javax.swing.JLabel cacheState4_5;
+    private javax.swing.JLabel cacheState4_6;
+    private javax.swing.JLabel cacheState4_7;
+    private javax.swing.JLabel cacheState4_8;
+    private javax.swing.JLabel cacheState4_9;
     private javax.swing.JLabel cicle_label;
     private javax.swing.JLabel cicle_number;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
     private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
@@ -1997,25 +2239,9 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
     private javax.swing.JLabel jLabel121;
-    private javax.swing.JLabel jLabel122;
-    private javax.swing.JLabel jLabel123;
-    private javax.swing.JLabel jLabel124;
-    private javax.swing.JLabel jLabel125;
-    private javax.swing.JLabel jLabel126;
-    private javax.swing.JLabel jLabel127;
-    private javax.swing.JLabel jLabel128;
-    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
-    private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel153;
     private javax.swing.JLabel jLabel154;
     private javax.swing.JLabel jLabel155;
     private javax.swing.JLabel jLabel156;
@@ -2034,28 +2260,12 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel168;
     private javax.swing.JLabel jLabel169;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel170;
-    private javax.swing.JLabel jLabel171;
-    private javax.swing.JLabel jLabel172;
-    private javax.swing.JLabel jLabel173;
-    private javax.swing.JLabel jLabel174;
-    private javax.swing.JLabel jLabel175;
-    private javax.swing.JLabel jLabel176;
-    private javax.swing.JLabel jLabel177;
-    private javax.swing.JLabel jLabel178;
-    private javax.swing.JLabel jLabel179;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel180;
-    private javax.swing.JLabel jLabel181;
-    private javax.swing.JLabel jLabel182;
-    private javax.swing.JLabel jLabel183;
-    private javax.swing.JLabel jLabel184;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel201;
     private javax.swing.JLabel jLabel202;
-    private javax.swing.JLabel jLabel203;
     private javax.swing.JLabel jLabel204;
     private javax.swing.JLabel jLabel205;
     private javax.swing.JLabel jLabel206;
@@ -2074,43 +2284,11 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel218;
     private javax.swing.JLabel jLabel219;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel220;
-    private javax.swing.JLabel jLabel221;
-    private javax.swing.JLabel jLabel222;
-    private javax.swing.JLabel jLabel223;
-    private javax.swing.JLabel jLabel224;
-    private javax.swing.JLabel jLabel225;
-    private javax.swing.JLabel jLabel226;
-    private javax.swing.JLabel jLabel227;
-    private javax.swing.JLabel jLabel228;
-    private javax.swing.JLabel jLabel229;
     private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel230;
-    private javax.swing.JLabel jLabel231;
-    private javax.swing.JLabel jLabel232;
-    private javax.swing.JLabel jLabel233;
-    private javax.swing.JLabel jLabel234;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
@@ -2129,33 +2307,34 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
     private javax.swing.JLabel jLabel73;
-    private javax.swing.JLabel jLabel74;
-    private javax.swing.JLabel jLabel75;
-    private javax.swing.JLabel jLabel76;
-    private javax.swing.JLabel jLabel77;
-    private javax.swing.JLabel jLabel78;
-    private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel80;
-    private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
-    private javax.swing.JLabel jLabel83;
-    private javax.swing.JLabel jLabel84;
-    private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
-    private javax.swing.JLabel jLabel87;
-    private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator10;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JPanel memPanel;
+    private javax.swing.JLabel memiD0;
+    private javax.swing.JLabel memiD1;
+    private javax.swing.JLabel memiD10;
+    private javax.swing.JLabel memiD11;
+    private javax.swing.JLabel memiD12;
+    private javax.swing.JLabel memiD13;
+    private javax.swing.JLabel memiD14;
+    private javax.swing.JLabel memiD15;
+    private javax.swing.JLabel memiD2;
+    private javax.swing.JLabel memiD3;
+    private javax.swing.JLabel memiD4;
+    private javax.swing.JLabel memiD5;
+    private javax.swing.JLabel memiD6;
+    private javax.swing.JLabel memiD7;
+    private javax.swing.JLabel memiD8;
+    private javax.swing.JLabel memiD9;
     private javax.swing.JLabel memoryBlock0;
     private javax.swing.JLabel memoryBlock1;
     private javax.swing.JLabel memoryBlock10;

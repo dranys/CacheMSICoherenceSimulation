@@ -64,7 +64,7 @@
                       <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                      <Component id="memPanel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="40" max="32767" attributes="0"/>
                       <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -140,7 +140,7 @@
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
+                  <Component id="memPanel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="209" max="32767" attributes="0"/>
           </Group>
@@ -222,57 +222,57 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabel38" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel23" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel21" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel18" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -280,26 +280,26 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel4" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="cacheState2_0" min="-2" pref="61" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cacheState2_2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel39" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel40" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState2_14" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState2_15" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -336,7 +336,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_0" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block0" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -344,94 +344,94 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel11" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel26" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache2_Block1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel27" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel29" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel15" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel30" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState2_6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache2_Block6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel34" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel35" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel21" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel36" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_11" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_12" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel38" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block13" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel24" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel39" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_14" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel25" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel40" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState2_15" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache2_Block15" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -440,7 +440,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="cacheState2_0">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -525,77 +525,77 @@
             <Property name="text" type="java.lang.String" value="0xf"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel26">
+        <Component class="javax.swing.JLabel" name="cacheState2_1">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel27">
+        <Component class="javax.swing.JLabel" name="cacheState2_2">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel28">
+        <Component class="javax.swing.JLabel" name="cacheState2_3">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel29">
+        <Component class="javax.swing.JLabel" name="cacheState2_4">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel30">
+        <Component class="javax.swing.JLabel" name="cacheState2_5">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel31">
+        <Component class="javax.swing.JLabel" name="cacheState2_6">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel32">
+        <Component class="javax.swing.JLabel" name="cacheState2_7">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel33">
+        <Component class="javax.swing.JLabel" name="cacheState2_8">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel34">
+        <Component class="javax.swing.JLabel" name="cacheState2_9">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel35">
+        <Component class="javax.swing.JLabel" name="cacheState2_10">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel36">
+        <Component class="javax.swing.JLabel" name="cacheState2_11">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel37">
+        <Component class="javax.swing.JLabel" name="cacheState2_12">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel38">
+        <Component class="javax.swing.JLabel" name="cacheState2_13">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel39">
+        <Component class="javax.swing.JLabel" name="cacheState2_14">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel40">
+        <Component class="javax.swing.JLabel" name="cacheState2_15">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -721,57 +721,57 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel86" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel71" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel85" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel70" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel84" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel69" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel83" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel68" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel82" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel67" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel81" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel66" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel80" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel65" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel79" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel64" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel78" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel77" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel62" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel76" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel61" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -779,26 +779,26 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel57" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="cacheState4_0" min="-2" pref="61" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel58" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel75" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cacheState4_2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel60" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel74" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel59" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel87" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel88" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState4_14" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState4_15" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -835,7 +835,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel57" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_0" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel58" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block0" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -843,94 +843,94 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel59" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel74" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache4_Block1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel60" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel75" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel61" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel76" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel62" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel77" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel78" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel64" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel79" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState4_6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache4_Block6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel65" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel80" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel66" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel81" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel67" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel82" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel68" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel83" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel69" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel84" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_11" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel70" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel85" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_12" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel71" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel86" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block13" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel72" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel87" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_14" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel73" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel88" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState4_15" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache4_Block15" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -939,7 +939,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel57">
+        <Component class="javax.swing.JLabel" name="cacheState4_0">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -1024,77 +1024,77 @@
             <Property name="text" type="java.lang.String" value="0xf"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel74">
+        <Component class="javax.swing.JLabel" name="cacheState4_1">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel75">
+        <Component class="javax.swing.JLabel" name="cacheState4_2">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel76">
+        <Component class="javax.swing.JLabel" name="cacheState4_3">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel77">
+        <Component class="javax.swing.JLabel" name="cacheState4_4">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel78">
+        <Component class="javax.swing.JLabel" name="cacheState4_5">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel79">
+        <Component class="javax.swing.JLabel" name="cacheState4_6">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel80">
+        <Component class="javax.swing.JLabel" name="cacheState4_7">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel81">
+        <Component class="javax.swing.JLabel" name="cacheState4_8">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel82">
+        <Component class="javax.swing.JLabel" name="cacheState4_9">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel83">
+        <Component class="javax.swing.JLabel" name="cacheState4_10">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel84">
+        <Component class="javax.swing.JLabel" name="cacheState4_11">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel85">
+        <Component class="javax.swing.JLabel" name="cacheState4_12">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel86">
+        <Component class="javax.swing.JLabel" name="cacheState4_13">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel87">
+        <Component class="javax.swing.JLabel" name="cacheState4_14">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel88">
+        <Component class="javax.swing.JLabel" name="cacheState4_15">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -1200,57 +1200,57 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel134" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel119" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel133" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel118" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel132" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel117" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel131" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel116" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel130" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel115" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel129" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel114" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel128" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel113" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel127" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel112" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel126" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel111" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel125" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel110" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel124" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel109" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -1258,26 +1258,26 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel105" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="cacheState3_0" min="-2" pref="61" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel106" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel123" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cacheState3_2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel108" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel122" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel107" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel135" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel136" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState3_14" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState3_15" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1314,7 +1314,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel105" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_0" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel106" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block0" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -1322,94 +1322,94 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel107" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel122" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache3_Block1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel108" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel123" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel109" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel124" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel110" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel125" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel111" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel126" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel112" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel127" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState3_6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache3_Block6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel113" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel128" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel114" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel129" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel115" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel130" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel116" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel131" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel117" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel132" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_11" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel118" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel133" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_12" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel119" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel134" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block13" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel120" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel135" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_14" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel121" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel136" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState3_15" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache3_Block15" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -1418,7 +1418,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel105">
+        <Component class="javax.swing.JLabel" name="cacheState3_0">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -1503,77 +1503,77 @@
             <Property name="text" type="java.lang.String" value="0xf"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel122">
+        <Component class="javax.swing.JLabel" name="cacheState3_1">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel123">
+        <Component class="javax.swing.JLabel" name="cacheState3_2">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel124">
+        <Component class="javax.swing.JLabel" name="cacheState3_3">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel125">
+        <Component class="javax.swing.JLabel" name="cacheState3_4">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel126">
+        <Component class="javax.swing.JLabel" name="cacheState3_5">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel127">
+        <Component class="javax.swing.JLabel" name="cacheState3_6">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel128">
+        <Component class="javax.swing.JLabel" name="cacheState3_7">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel129">
+        <Component class="javax.swing.JLabel" name="cacheState3_8">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel130">
+        <Component class="javax.swing.JLabel" name="cacheState3_9">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel131">
+        <Component class="javax.swing.JLabel" name="cacheState3_10">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel132">
+        <Component class="javax.swing.JLabel" name="cacheState3_11">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel133">
+        <Component class="javax.swing.JLabel" name="cacheState3_12">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel134">
+        <Component class="javax.swing.JLabel" name="cacheState3_13">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel135">
+        <Component class="javax.swing.JLabel" name="cacheState3_14">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel136">
+        <Component class="javax.swing.JLabel" name="cacheState3_15">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -1679,57 +1679,57 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel182" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel167" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel181" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel166" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel180" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel165" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel179" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel164" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel178" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel163" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel177" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel162" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel176" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel161" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel175" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel160" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel174" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel159" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel173" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel158" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel172" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel157" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -1737,26 +1737,26 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel153" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="cacheState1_0" min="-2" pref="61" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel154" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel171" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cacheState1_2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel156" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel170" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel155" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel183" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel184" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState1_14" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="cacheState1_15" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -1793,7 +1793,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel153" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_0" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel154" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block0" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -1801,94 +1801,94 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel155" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel170" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache1_Block1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel156" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel171" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel157" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel172" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel158" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel173" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel159" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel174" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel160" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel175" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cacheState1_6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cache1_Block6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel161" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel176" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel162" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel177" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel163" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel178" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel164" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel179" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel165" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel180" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_11" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel166" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel181" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_12" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel167" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel182" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block13" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel168" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel183" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_14" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel169" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel184" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="cacheState1_15" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="cache1_Block15" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -1897,7 +1897,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel153">
+        <Component class="javax.swing.JLabel" name="cacheState1_0">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -1982,77 +1982,77 @@
             <Property name="text" type="java.lang.String" value="0xf"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel170">
+        <Component class="javax.swing.JLabel" name="cacheState1_1">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel171">
+        <Component class="javax.swing.JLabel" name="cacheState1_2">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel172">
+        <Component class="javax.swing.JLabel" name="cacheState1_3">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel173">
+        <Component class="javax.swing.JLabel" name="cacheState1_4">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel174">
+        <Component class="javax.swing.JLabel" name="cacheState1_5">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel175">
+        <Component class="javax.swing.JLabel" name="cacheState1_6">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel176">
+        <Component class="javax.swing.JLabel" name="cacheState1_7">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel177">
+        <Component class="javax.swing.JLabel" name="cacheState1_9">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel178">
+        <Component class="javax.swing.JLabel" name="cacheState1_8">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel179">
+        <Component class="javax.swing.JLabel" name="cacheState1_10">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel180">
+        <Component class="javax.swing.JLabel" name="cacheState1_11">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel181">
+        <Component class="javax.swing.JLabel" name="cacheState1_12">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel182">
+        <Component class="javax.swing.JLabel" name="cacheState1_13">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel183">
+        <Component class="javax.swing.JLabel" name="cacheState1_14">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel184">
+        <Component class="javax.swing.JLabel" name="cacheState1_15">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -2151,7 +2151,7 @@
         <Property name="text" type="java.lang.String" value="Main Memory"/>
       </Properties>
     </Component>
-    <Container class="javax.swing.JPanel" name="jPanel5">
+    <Container class="javax.swing.JPanel" name="memPanel">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="ff" id="yellow" palette="1" red="ff" type="palette"/>
@@ -2170,57 +2170,57 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel232" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD13" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel217" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel231" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD12" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel216" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel230" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD11" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel215" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel229" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel214" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel228" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD9" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel213" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel227" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel212" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel226" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel211" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel225" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel210" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel224" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel209" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel223" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel208" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel222" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel207" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -2228,26 +2228,26 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel203" min="-2" pref="61" max="-2" attributes="0"/>
+                                  <Component id="memiD0" min="-2" pref="61" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jLabel204" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabel221" min="-2" max="-2" attributes="0"/>
+                                  <Component id="memiD2" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jLabel206" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabel220" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
                           <Component id="jLabel205" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel233" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel234" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="memiD14" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="memiD15" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -2284,7 +2284,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel203" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD0" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel204" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock0" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -2292,94 +2292,94 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel205" alignment="1" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel220" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="memoryBlock1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel206" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel221" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel207" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel222" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel208" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel223" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel209" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel224" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel210" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jLabel225" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="memiD6" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="memoryBlock6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel211" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel226" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD7" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock7" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel212" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel227" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD8" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock8" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel213" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel228" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD9" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock9" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel214" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel229" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD10" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock10" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel215" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel230" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD11" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock11" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel216" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel231" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD12" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock12" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel217" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel232" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD13" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock13" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel218" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel233" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD14" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel219" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel234" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="memiD15" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="memoryBlock15" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -2388,7 +2388,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel203">
+        <Component class="javax.swing.JLabel" name="memiD0">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
@@ -2473,77 +2473,77 @@
             <Property name="text" type="java.lang.String" value="0xf"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel220">
+        <Component class="javax.swing.JLabel" name="memiD1">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel221">
+        <Component class="javax.swing.JLabel" name="memiD2">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel222">
+        <Component class="javax.swing.JLabel" name="memiD3">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel223">
+        <Component class="javax.swing.JLabel" name="memiD4">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel224">
+        <Component class="javax.swing.JLabel" name="memiD5">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel225">
+        <Component class="javax.swing.JLabel" name="memiD6">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel226">
+        <Component class="javax.swing.JLabel" name="memiD7">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel227">
+        <Component class="javax.swing.JLabel" name="memiD8">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel228">
+        <Component class="javax.swing.JLabel" name="memiD9">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel229">
+        <Component class="javax.swing.JLabel" name="memiD10">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel230">
+        <Component class="javax.swing.JLabel" name="memiD11">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel231">
+        <Component class="javax.swing.JLabel" name="memiD12">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel232">
+        <Component class="javax.swing.JLabel" name="memiD13">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel233">
+        <Component class="javax.swing.JLabel" name="memiD14">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel234">
+        <Component class="javax.swing.JLabel" name="memiD15">
           <Properties>
             <Property name="text" type="java.lang.String" value="v"/>
           </Properties>

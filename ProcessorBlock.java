@@ -14,8 +14,8 @@ import java.util.concurrent.Semaphore;
 public class ProcessorBlock extends Thread {
 
     private static Semaphore semaphore;
-    private Cpu cpu;
-    private CacheController controller;
+    Cpu cpu;
+    CacheController controller;
     private boolean usingBus, BW, BR;
     private int busDirectionIn, busDirectionOut, busDataOut, busDataIn, busIdentifier;
     private String busRequestType;

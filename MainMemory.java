@@ -49,6 +49,7 @@ public class MainMemory {
     }
     
     public void recordData(int direction, int data, int id_processor){
+        //System.out.println("guardando en memoria dato: "+data+"direccion: "+direction+" ID: "+id_processor);
         switch(direction){
             case 0:
                 line0.setData(data);
@@ -118,6 +119,7 @@ public class MainMemory {
         
     }
     public int readData(int direction){
+        //System.out.println("leyendo en memoria direccion: "+direction);
         int data = 0;
         switch(direction){
             case 0:

@@ -46,10 +46,9 @@ public class Cpu extends Thread {
 
             for (;;) {
                 Thread.sleep(1000);
-
                 while (pausedCpu) {
-                    yield();
-                    System.out.println("Pausado CPU: " + identifier);
+                    //yield();
+                    System.out.println("Pausado CPU: " + identifier + ":"+pausedCpu);
                     Thread.sleep(1000);
                 }
                 generateRequest();
@@ -139,7 +138,6 @@ public class Cpu extends Thread {
     }
 
     public void resumeCpu() {
-        System.out.println("resumiendo cpu");
         this.pausedCpu = false;
     }
 

@@ -16,7 +16,7 @@ public class ProcessorBlock extends Thread {
     private static Semaphore semaphore;
     private Cpu cpu;
     private CacheController controller;
-    private boolean usingBus, pausedCpu, BW, BR;
+    private boolean usingBus, BW, BR;
     private int busDirectionIn, busDirectionOut, busDataOut, busDataIn, busIdentifier;
     private String busRequestType;
     private String pbName;
@@ -29,7 +29,6 @@ public class ProcessorBlock extends Thread {
         this.controller = new CacheController("Controlador" + id);
         this.cpu = new Cpu(id);
         this.usingBus = false;
-        this.pausedCpu = false;
         this.BW = false;
         this.BR = false;
         this.busDirectionIn = 0;
@@ -83,22 +82,16 @@ public class ProcessorBlock extends Thread {
             for (;;) {
                 busCheck();
                 CPUconnection();
-                Thread.sleep(100);
+                Thread.sleep(1000);
 
                 while (usingBus) {//this block pause cpu for waiting to connect and comunucate
                     busCheck();
-                    if (!pausedCpu) {//with de bus
-                        cpu.pauseCpu();
-                        pausedCpu = true;
-                    }
+                    System.out.println("usando bus...");
+                    cpu.pauseCpu();
                     Thread.sleep(1000);
-                    yield();
+                    //yield();
                 }
-                if (pausedCpu) {
-                    System.out.println("Resumiendo cpu"+cpu.getIdentifier());
-                    cpu.resumeCpu();
-                    pausedCpu = false;
-                }
+                cpu.resumeCpu();
 
             }
 
@@ -137,7 +130,9 @@ public class ProcessorBlock extends Thread {
     public void setBR(boolean BR) {
         this.BR = BR;
     }
-
+    public void setBusDataIn(int dataIn){
+        this.busDataIn = dataIn;
+    }
    
     
     public void setBusDirectionIn(int busDirection) {

@@ -34,7 +34,7 @@ public class CacheLine {
     }
 
     public void setData(int data) {
-        System.out.println("Recording data: "+data);
+        //System.out.println("Recording data: "+data);
         this.data = data;
     }
     

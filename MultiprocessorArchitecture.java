@@ -277,7 +277,7 @@ public class MultiprocessorArchitecture extends Thread {
 
     }
 
-    private void sort() {
+    private void sort() {//
         int index = 0;
         long suma = listTime1.get(0) + listTime1.get(1) + listTime1.get(2) + listTime1.get(3);
         if (suma == 0) { System.out.println("no petitions found");

@@ -30,7 +30,7 @@ public class Cache {
     
     public Cache(String name){
         this.name = name;
-        String state = "I";
+        String state = "S";
         line0 = new CacheLine(state, 0);
         line1 = new CacheLine(state, 0);
         line2 = new CacheLine(state, 0);

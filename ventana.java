@@ -7,9 +7,6 @@ package cachecoherencesimulation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.Timer;
 
 /**
@@ -32,7 +29,7 @@ public class ventana extends javax.swing.JFrame {
         initComponents();
 
         updateWindow();
-        Timer timer = new Timer(500, new ActionListener() {
+        Timer timer = new Timer(50, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateWindow();
@@ -54,10 +51,9 @@ public class ventana extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
-        stepForwardButton = new javax.swing.JButton();
+        startButton = new javax.swing.JButton();
         cicle_label = new javax.swing.JLabel();
-        stepBackButton = new javax.swing.JButton();
-        cicle_number = new javax.swing.JLabel();
+        cycle_number = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -315,29 +311,65 @@ public class ventana extends javax.swing.JFrame {
         memoryBlock13 = new javax.swing.JLabel();
         memoryBlock14 = new javax.swing.JLabel();
         memoryBlock15 = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        direction_cpu4 = new javax.swing.JLabel();
+        action_cpu1 = new javax.swing.JLabel();
+        direction_cpu1 = new javax.swing.JLabel();
+        action_cpu2 = new javax.swing.JLabel();
+        direction_cpu2 = new javax.swing.JLabel();
+        action_cpu3 = new javax.swing.JLabel();
+        direction_cpu3 = new javax.swing.JLabel();
+        action_cpu4 = new javax.swing.JLabel();
+        stopButton = new javax.swing.JToggleButton();
+        jSeparator6 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        miss_cpu4 = new javax.swing.JLabel();
+        miss_cpu1 = new javax.swing.JLabel();
+        miss_cpu2 = new javax.swing.JLabel();
+        miss_cpu3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        stepForwardButton.setText("Step forward");
-        stepForwardButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                stepForwardButtonActionPerformed(evt);
+        startButton.setText("start");
+        startButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                startButtonMouseClicked(evt);
             }
         });
+        startButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                startButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(startButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 70, 70));
 
         cicle_label.setText("cicle #");
+        getContentPane().add(cicle_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        stepBackButton.setText("Step_back");
-
-        cicle_number.setText("0");
+        cycle_number.setText("0");
+        cycle_number.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cycle_numberMouseClicked(evt);
+            }
+        });
+        getContentPane().add(cycle_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 30, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cpu1.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 130, 120));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cpu2.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cpu3.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 0, -1, 124));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cpu4.png"))); // NOI18N
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 0, -1, 118));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 1250, 10));
+        getContentPane().add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 246, 1251, -1));
 
         jPanel1.setBackground(java.awt.Color.lightGray);
         jPanel1.setBorder(new javax.swing.border.MatteBorder(null));
@@ -617,16 +649,22 @@ public class ventana extends javax.swing.JFrame {
                     .addComponent(jLabel25)
                     .addComponent(cacheState2_15)
                     .addComponent(cache2_Block15))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 293, -1, -1));
+
         jLabel6.setText("Cache1");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
 
         jLabel7.setText("Cache2");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, -1, -1));
 
         jLabel8.setText("Cache3");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, -1, -1));
 
         jLabel9.setText("Cache4");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 260, -1, -1));
 
         jPanel2.setBackground(java.awt.Color.lightGray);
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
@@ -906,8 +944,10 @@ public class ventana extends javax.swing.JFrame {
                     .addComponent(jLabel73)
                     .addComponent(cacheState4_15)
                     .addComponent(cache4_Block15))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1002, 293, -1, -1));
 
         jPanel3.setBackground(java.awt.Color.lightGray);
         jPanel3.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1187,8 +1227,10 @@ public class ventana extends javax.swing.JFrame {
                     .addComponent(jLabel121)
                     .addComponent(cacheState3_15)
                     .addComponent(cache3_Block15))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(751, 293, -1, -1));
 
         jPanel4.setBackground(java.awt.Color.lightGray);
         jPanel4.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1381,7 +1423,7 @@ public class ventana extends javax.swing.JFrame {
                     .addComponent(cache1_Block13)
                     .addComponent(cache1_Block14)
                     .addComponent(cache1_Block15))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(28, 28, 28))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1471,9 +1513,13 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 293, -1, -1));
+
         jLabel201.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/slot_001.png"))); // NOI18N
+        getContentPane().add(jLabel201, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 70, 80));
 
         jLabel202.setText("Main Memory");
+        getContentPane().add(jLabel202, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 258, -1, -1));
 
         memPanel.setBackground(java.awt.Color.yellow);
         memPanel.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1756,112 +1802,103 @@ public class ventana extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator3)
-            .addComponent(jSeparator4)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cicle_label)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cicle_number, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(48, 48, 48)
-                                .addComponent(stepBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(stepForwardButton)
-                                .addGap(91, 91, 91))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2)
-                                .addGap(41, 41, 41)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel3)
-                        .addGap(113, 113, 113)
-                        .addComponent(jLabel5)
-                        .addGap(79, 79, 79))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(memPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(jLabel202)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addGap(182, 182, 182)
-                .addComponent(jLabel7)
-                .addGap(197, 197, 197)
-                .addComponent(jLabel8)
-                .addGap(196, 196, 196)
-                .addComponent(jLabel9)
-                .addGap(111, 111, 111))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cicle_label)
-                            .addComponent(cicle_number)
-                            .addComponent(stepBackButton)
-                            .addComponent(stepForwardButton))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel201, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(14, 14, 14)))
-                        .addGap(19, 19, 19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)))
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel9)
-                    .addComponent(jLabel202))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(memPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(209, Short.MAX_VALUE))
-        );
+        getContentPane().add(memPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 293, -1, -1));
+        getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 208, 1251, 10));
+
+        direction_cpu4.setForeground(java.awt.SystemColor.desktop);
+        direction_cpu4.setText("jLabel4");
+        getContentPane().add(direction_cpu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 220, -1, -1));
+
+        action_cpu1.setForeground(java.awt.SystemColor.desktop);
+        action_cpu1.setText("jLabel4");
+        getContentPane().add(action_cpu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+
+        direction_cpu1.setForeground(java.awt.SystemColor.desktop);
+        direction_cpu1.setText("jLabel4");
+        getContentPane().add(direction_cpu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
+
+        action_cpu2.setForeground(java.awt.SystemColor.desktop);
+        action_cpu2.setText("jLabel4");
+        getContentPane().add(action_cpu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, -1, -1));
+
+        direction_cpu2.setForeground(java.awt.SystemColor.desktop);
+        direction_cpu2.setText("jLabel4");
+        getContentPane().add(direction_cpu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, -1, -1));
+
+        action_cpu3.setForeground(java.awt.SystemColor.desktop);
+        action_cpu3.setText("jLabel4");
+        getContentPane().add(action_cpu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, -1, -1));
+
+        direction_cpu3.setForeground(java.awt.SystemColor.desktop);
+        direction_cpu3.setText("jLabel4");
+        getContentPane().add(direction_cpu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, -1, -1));
+
+        action_cpu4.setForeground(java.awt.SystemColor.desktop);
+        action_cpu4.setText("jLabel4");
+        getContentPane().add(action_cpu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 180, -1, -1));
+
+        stopButton.setText("stop");
+        stopButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                stopButtonMouseClicked(evt);
+            }
+        });
+        getContentPane().add(stopButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 70, 70));
+        getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1250, 10));
+
+        jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel4.setForeground(java.awt.Color.red);
+        jLabel4.setText("MISSES");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, -1, -1));
+
+        jLabel26.setFont(new java.awt.Font("TlwgTypewriter", 1, 18)); // NOI18N
+        jLabel26.setForeground(java.awt.SystemColor.activeCaption);
+        jLabel26.setText("ACTION");
+        getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 70, -1));
+
+        jLabel27.setFont(new java.awt.Font("TlwgTypewriter", 1, 18)); // NOI18N
+        jLabel27.setForeground(java.awt.SystemColor.activeCaption);
+        jLabel27.setText("ADDRESS");
+        getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 220, -1, -1));
+
+        miss_cpu4.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        miss_cpu4.setForeground(java.awt.Color.red);
+        miss_cpu4.setText("jLabel28");
+        getContentPane().add(miss_cpu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 140, -1, -1));
+
+        miss_cpu1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        miss_cpu1.setForeground(java.awt.Color.red);
+        miss_cpu1.setText("jLabel28");
+        getContentPane().add(miss_cpu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, -1, -1));
+
+        miss_cpu2.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        miss_cpu2.setForeground(java.awt.Color.red);
+        miss_cpu2.setText("jLabel28");
+        getContentPane().add(miss_cpu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 140, -1, -1));
+
+        miss_cpu3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        miss_cpu3.setForeground(java.awt.Color.red);
+        miss_cpu3.setText("jLabel28");
+        getContentPane().add(miss_cpu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void stepForwardButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stepForwardButtonActionPerformed
+    private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
+        
+    }//GEN-LAST:event_startButtonActionPerformed
 
-    }//GEN-LAST:event_stepForwardButtonActionPerformed
+    private void startButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startButtonMouseClicked
+       //a1.startMultiprocessor();
+    }//GEN-LAST:event_startButtonMouseClicked
+
+    private void cycle_numberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cycle_numberMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cycle_numberMouseClicked
+
+    private void stopButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stopButtonMouseClicked
+        //a1.stopMultiprocessor();
+    }//GEN-LAST:event_stopButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1902,11 +1939,31 @@ public class ventana extends javax.swing.JFrame {
     }
 
     public void updateWindow() {
+        updateMisc();
+        updateCPUstates();
         updateMemory();
         updateCache1();
         updateCache2();
         updateCache3();
         updateCache4();
+    }
+    public void updateMisc(){
+        cycle_number.setText(String.valueOf(a1.cycles));
+        miss_cpu1.setText(String.valueOf(a1.block1.controller.getMissCounter()));
+        miss_cpu2.setText(String.valueOf(a1.block2.controller.getMissCounter()));
+        miss_cpu3.setText(String.valueOf(a1.block3.controller.getMissCounter()));
+        miss_cpu4.setText(String.valueOf(a1.block4.controller.getMissCounter()));
+    }
+    public void updateCPUstates(){
+        action_cpu1.setText(String.valueOf(a1.block1.cpu.getRequest()));
+        action_cpu2.setText(String.valueOf(a1.block2.cpu.getRequest()));
+        action_cpu3.setText(String.valueOf(a1.block3.cpu.getRequest()));
+        action_cpu4.setText(String.valueOf(a1.block4.cpu.getRequest()));
+        
+        direction_cpu1.setText(String.valueOf(a1.block1.cpu.getDirection()));
+        direction_cpu2.setText(String.valueOf(a1.block2.cpu.getDirection()));
+        direction_cpu3.setText(String.valueOf(a1.block3.cpu.getDirection()));
+        direction_cpu4.setText(String.valueOf(a1.block4.cpu.getDirection()));
     }
 
     public void updateMemory() {
@@ -2089,6 +2146,10 @@ public class ventana extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel action_cpu1;
+    private javax.swing.JLabel action_cpu2;
+    private javax.swing.JLabel action_cpu3;
+    private javax.swing.JLabel action_cpu4;
     private javax.swing.JLabel cache1_Block0;
     private javax.swing.JLabel cache1_Block1;
     private javax.swing.JLabel cache1_Block10;
@@ -2218,7 +2279,11 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel cacheState4_8;
     private javax.swing.JLabel cacheState4_9;
     private javax.swing.JLabel cicle_label;
-    private javax.swing.JLabel cicle_number;
+    private javax.swing.JLabel cycle_number;
+    private javax.swing.JLabel direction_cpu1;
+    private javax.swing.JLabel direction_cpu2;
+    private javax.swing.JLabel direction_cpu3;
+    private javax.swing.JLabel direction_cpu4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel106;
@@ -2287,7 +2352,10 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
@@ -2317,6 +2385,8 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JPanel memPanel;
     private javax.swing.JLabel memiD0;
@@ -2351,7 +2421,11 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel memoryBlock7;
     private javax.swing.JLabel memoryBlock8;
     private javax.swing.JLabel memoryBlock9;
-    private javax.swing.JButton stepBackButton;
-    private javax.swing.JButton stepForwardButton;
+    private javax.swing.JLabel miss_cpu1;
+    private javax.swing.JLabel miss_cpu2;
+    private javax.swing.JLabel miss_cpu3;
+    private javax.swing.JLabel miss_cpu4;
+    private javax.swing.JButton startButton;
+    private javax.swing.JToggleButton stopButton;
     // End of variables declaration//GEN-END:variables
 }

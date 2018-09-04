@@ -22,6 +22,7 @@ public class Cpu extends Thread {
     private int data;
     private boolean readRequest;
     private boolean pausedCpu;
+    
 
     /**
      * Constructor
@@ -36,6 +37,7 @@ public class Cpu extends Thread {
         this.data = 0;
         this.readRequest = false;
         this.pausedCpu = false;
+        
     }
 
     @Override
@@ -47,8 +49,8 @@ public class Cpu extends Thread {
             for (;;) {
                 Thread.sleep(1000);
                 while (pausedCpu) {
-                    //yield();
-                    System.out.println("Pausado CPU: " + identifier + ":"+pausedCpu);
+                    
+                    //System.out.println("Pausado CPU: " + identifier + ":"+pausedCpu);
                     Thread.sleep(1000);
                 }
                 generateRequest();
@@ -65,7 +67,6 @@ public class Cpu extends Thread {
 
     @Override
     public void start() {
-        System.out.println("Starting processor id: " + identifier);
         if (t == null) {
             t = new Thread(this);
             t.start();
@@ -87,8 +88,8 @@ public class Cpu extends Thread {
                 this.request = "PE";
                 break;
         }
-        this.direction = rand.nextInt(15) + 0;// set a new direction between 0 and 16
-        this.data = rand.nextInt(10) + 1;// set a new direction between 0 and 16
+        this.direction = rand.nextInt(16) + 0;// set a new direction between 0 and 16
+        this.data = rand.nextInt(10) + 1;// set a new data between 0 and 16
     }
 
     /**

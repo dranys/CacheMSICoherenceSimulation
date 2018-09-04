@@ -52,7 +52,7 @@ public class BusInterface{
     
     private int memoryRead(int direction){
         int data = memory.readData(direction);
-        this.busWr = true;
+        this.busRd = true;
         return data;
         
     }

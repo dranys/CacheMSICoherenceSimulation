@@ -7,6 +7,8 @@ package cachecoherencesimulation;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -22,8 +24,12 @@ public class MultiprocessorArchitecture extends Thread {
     ProcessorBlock block4;
     List<Long> listTime1, listTime2;
     List<Integer> listOrdered;
+    boolean transition;
+    int cycles;
 
     public MultiprocessorArchitecture() {
+        this.transition = true;
+        this.cycles = 0;
         bus = new BusInterface("bus");
         listTime1 = new ArrayList<>(4);
         listTime2 = new ArrayList<>(4);
@@ -50,13 +56,16 @@ public class MultiprocessorArchitecture extends Thread {
         try {
 
             for (;;) {
-
-                Thread.sleep(500);
-                readPetitions();
-                executePetitions();
-                listTime1.clear();
-                listTime2.clear();
-                listOrdered.clear();
+               if(transition){
+                    this.cycles++;
+                    Thread.sleep(100);
+                    readPetitions();
+                    executePetitions();
+                    listTime1.clear();
+                    listTime2.clear();
+                    listOrdered.clear();}
+                 
+                
 
             }
 
@@ -74,6 +83,13 @@ public class MultiprocessorArchitecture extends Thread {
             t.start();
         }
     }
+    
+    public void startMultiprocessor(){
+        this.transition = true;
+    }
+    public void stopMultiprocessor(){
+        this.transition = false;
+    }
 
     private void executePetitions() {
 
@@ -83,13 +99,19 @@ public class MultiprocessorArchitecture extends Thread {
                 idProcessor = listOrdered.get(i);
                 //System.out.println("id-->"+idProcessor);
                 if (idProcessor != 0) {
-                    //System.out.println("ejecutando__"+idProcessor);
-                    execAux(idProcessor);
+                    try {
+                        //System.out.println("ejecutando__"+idProcessor);
+                        //bloquear
+                        execAux(idProcessor);
+                        Thread.sleep(400);//waiting for cpu to read the bus
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(MultiprocessorArchitecture.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
         }
         else{
-            System.out.println("lista vacía");
+            //System.out.println("lista de peticiones vacía");
         }
     }
 
@@ -110,7 +132,7 @@ public class MultiprocessorArchitecture extends Thread {
                 requestType = block1.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
                 block1.setBusDataIn(resultado);
-                generateRequest(1, requestType);
+                generateRequest(1, requestType,direction);
                 block1.setUsingBus(false);
                 break;
             case 2:
@@ -121,7 +143,7 @@ public class MultiprocessorArchitecture extends Thread {
                 requestType = block2.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
                 block2.setBusDataIn(resultado);
-                generateRequest(2, requestType);
+                generateRequest(2, requestType,direction);
                 block2.setUsingBus(false);
                 break;
             case 3:
@@ -132,7 +154,7 @@ public class MultiprocessorArchitecture extends Thread {
                 requestType = block3.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
                 block3.setBusDataIn(resultado);
-                generateRequest(3, requestType);
+                generateRequest(3, requestType,direction);
                 block3.setUsingBus(false);
                 break;
                 
@@ -144,7 +166,7 @@ public class MultiprocessorArchitecture extends Thread {
                 requestType = block4.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
                 block4.setBusDataIn(resultado);
-                generateRequest(4, requestType);
+                generateRequest(4, requestType,direction);
                 block4.setUsingBus(false);
                 break;
 
@@ -153,71 +175,95 @@ public class MultiprocessorArchitecture extends Thread {
         return resultado;
     }
 
-    private void generateRequest(int id, String requestType) {
+    private void generateRequest(int id, String requestType, int direction) {
         switch (id) {
             case 1:
                 if (requestType.equals("BW")) {
                     block2.setBR(false);
                     block2.setBW(true);
+                    block2.setBusDirectionIn(direction);
                     block3.setBR(false);
                     block3.setBW(true);
+                    block3.setBusDirectionIn(direction);
                     block4.setBR(false);
                     block4.setBW(true);
+                    block4.setBusDirectionIn(direction);
                 } else {
                     block2.setBR(true);
                     block2.setBW(false);
+                    block2.setBusDirectionIn(direction);
                     block3.setBR(true);
                     block3.setBW(false);
+                    block3.setBusDirectionIn(direction);
                     block4.setBR(true);
                     block4.setBW(false);
+                    block4.setBusDirectionIn(direction);
                 }
             case 2:
                 if (requestType.equals("BW")) {
                     block1.setBR(false);
                     block1.setBW(true);
+                    block1.setBusDirectionIn(direction);
                     block3.setBR(false);
                     block3.setBW(true);
+                    block3.setBusDirectionIn(direction);
                     block4.setBR(false);
                     block4.setBW(true);
+                    block4.setBusDirectionIn(direction);
                 } else {
                     block1.setBR(true);
                     block1.setBW(false);
+                    block1.setBusDirectionIn(direction);
                     block3.setBR(true);
                     block3.setBW(false);
+                    block3.setBusDirectionIn(direction);
                     block4.setBR(true);
                     block4.setBW(false);
+                    block4.setBusDirectionIn(direction);
                 }
             case 3:
                 if (requestType.equals("BW")) {
                     block1.setBR(false);
                     block1.setBW(true);
+                    block1.setBusDirectionIn(direction);
                     block2.setBR(false);
                     block2.setBW(true);
+                    block2.setBusDirectionIn(direction);
                     block4.setBR(false);
                     block4.setBW(true);
+                    block4.setBusDirectionIn(direction);
                 } else {
                     block1.setBR(true);
                     block1.setBW(false);
+                    block1.setBusDirectionIn(direction);
                     block2.setBR(true);
                     block2.setBW(false);
+                    block2.setBusDirectionIn(direction);
                     block4.setBR(true);
                     block4.setBW(false);
+                    block4.setBusDirectionIn(direction);
                 }
             case 4:
                 if (requestType.equals("BW")) {
                     block1.setBR(false);
                     block1.setBW(true);
+                    block1.setBusDirectionIn(direction);
                     block2.setBR(false);
                     block2.setBW(true);
+                    block2.setBusDirectionIn(direction);
                     block3.setBR(false);
                     block3.setBW(true);
+                    block3.setBusDirectionIn(direction);
                 } else {
                     block1.setBR(true);
                     block1.setBW(false);
+                    block1.setBusDirectionIn(direction);
                     block2.setBR(true);
                     block2.setBW(false);
+                    block2.setBusDirectionIn(direction);
                     block3.setBR(true);
                     block3.setBW(false);
+                    block3.setBusDirectionIn(direction);
                 }
         }
     }
@@ -268,10 +314,6 @@ public class MultiprocessorArchitecture extends Thread {
             listTime1.add(cero);
             listTime2.add(cero);
         }
-        System.out.println("tiempo1="+listTime2.get(0));
-        System.out.println("tiempo2="+listTime2.get(1));
-        System.out.println("tiempo3="+listTime2.get(2));
-        System.out.println("tiempo4="+listTime2.get(3));
 
         sort();
 
@@ -280,7 +322,7 @@ public class MultiprocessorArchitecture extends Thread {
     private void sort() {//
         int index = 0;
         long suma = listTime1.get(0) + listTime1.get(1) + listTime1.get(2) + listTime1.get(3);
-        if (suma == 0) { System.out.println("no petitions found");
+        if (suma == 0) { //System.out.println("no petitions found");
         } else {
             for (int i = 0; i < 4; i++) {
                 long MinorElement = getMinorElement();
@@ -292,10 +334,10 @@ public class MultiprocessorArchitecture extends Thread {
                     index = getIndexOf(MinorElement);
                     listOrdered.add(index+1);
                 }
-                System.out.println("minorElement-->"+MinorElement+" index-->"+index);
+                //System.out.println("minorElement-->"+MinorElement+" index-->"+index);
                 
             }
-            System.out.println("ordenado--> 0:"+listOrdered.get(0)+" 1:"+listOrdered.get(1)+" 2:"+listOrdered.get(2)+" 3:"+listOrdered.get(3));
+            //System.out.println("ordenado--> 0:"+listOrdered.get(0)+" 1:"+listOrdered.get(1)+" 2:"+listOrdered.get(2)+" 3:"+listOrdered.get(3));
         }
         
         

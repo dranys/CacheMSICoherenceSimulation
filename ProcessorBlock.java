@@ -31,8 +31,8 @@ public class ProcessorBlock extends Thread {
         this.usingBus = false;
         this.BW = false;
         this.BR = false;
-        this.busDirectionIn = 0;
-        this.busDirectionOut = 0;
+        this.busDirectionIn = -1;
+        this.busDirectionOut = -1;
         semaphore = new Semaphore(1);
         this.busRequestType = "";
         this.clockTimeBus = 0;
@@ -56,14 +56,14 @@ public class ProcessorBlock extends Thread {
             int busSignalOut = controller.connectCacheCpu(operation, direction, data);
             if (busSignalOut == 1) {
                 cpu.pauseCpu();
-                System.out.println("solicitud de BW");
+                //System.out.println("solicitud de BW");
                 busRequestType = "BW";
                 this.clockTimeBus = System.nanoTime();
                 usingBus = true;
 
             } else if (busSignalOut == 2) {
                 cpu.pauseCpu();
-                System.out.println("solicitud de BR");
+                //System.out.println("solicitud de BR");
                 busRequestType = "BR";
                 this.clockTimeBus = System.nanoTime();
                 usingBus = true;
@@ -82,13 +82,12 @@ public class ProcessorBlock extends Thread {
             for (;;) {
                 busCheck();
                 CPUconnection();
-                Thread.sleep(1000);
+                Thread.sleep(50);
 
                 while (usingBus) {//this block pause cpu for waiting to connect and comunucate
                     busCheck();
-                    System.out.println("usando bus...");
                     cpu.pauseCpu();
-                    Thread.sleep(1000);
+                    Thread.sleep(50);
                     //yield();
                 }
                 cpu.resumeCpu();
@@ -102,17 +101,20 @@ public class ProcessorBlock extends Thread {
     }
 
     private void busCheck() {
-        if(busRequestType.equals("BR")){
-            controller.recordOnBR(busDirectionOut, busDataIn);
+        
+        if(busRequestType.equals("BR")){//waiting for data to read from memory
+            controller.recordOnBR(busDirectionOut, busDataIn);//save the data 
         }
         if (busDirectionIn != busDirectionOut) {
             controller.busRead(BW, BR, busDirectionIn);
+            this.BW = false;
+            this.BR = false;
+            busDirectionIn = -1;
         }
     }
 
     @Override
     public void start() {
-        System.out.println("Starting Processor Block" + this.pbName);
         if (t == null) {
             t = new Thread(this);
             t.start();

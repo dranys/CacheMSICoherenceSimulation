@@ -75,10 +75,11 @@ public class CacheController{
     }
 
     public void busRead(boolean BW, boolean BR,int direction) {
+        if(BW || BR){
         String operation="null";
         if(BW) operation = "BW";
         else if(BR) operation = "BR";
-        control(direction, cache.getCacheState(direction), operation, 0);
+        control(direction, cache.getCacheState(direction), operation, 0);}
         
         
     }

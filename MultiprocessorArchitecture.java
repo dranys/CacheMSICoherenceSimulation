@@ -100,10 +100,10 @@ public class MultiprocessorArchitecture extends Thread {
                 //System.out.println("id-->"+idProcessor);
                 if (idProcessor != 0) {
                     try {
-                        //System.out.println("ejecutando__"+idProcessor);
-                        //bloquear
+                        System.out.println("ejecutando-->"+idProcessor);
                         execAux(idProcessor);
-                        Thread.sleep(400);//waiting for cpu to read the bus
+                        Thread.sleep(200);//waiting for cpu to read the bus
+                        usingBus(idProcessor);
                     } catch (InterruptedException ex) {
                         Logger.getLogger(MultiprocessorArchitecture.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -113,6 +113,24 @@ public class MultiprocessorArchitecture extends Thread {
         else{
             //System.out.println("lista de peticiones vacía");
         }
+    }
+    
+    private void usingBus(int id){
+        switch(id){
+            case 1:
+                block1.setUsingBus(false);
+                break;
+            case 2:
+                block2.setUsingBus(false);
+                break;
+            case 3:
+                block3.setUsingBus(false);
+                break;
+            case 4: 
+                block4.setUsingBus(false);
+                break;
+        }
+    
     }
 
     private int execAux(int id) {
@@ -131,9 +149,9 @@ public class MultiprocessorArchitecture extends Thread {
                 data = block1.getBusDataOut();
                 requestType = block1.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
-                block1.setBusDataIn(resultado);
+                if(requestType.equals("BR")){block1.controller.recordOnBR(direction,resultado);}
                 generateRequest(1, requestType,direction);
-                block1.setUsingBus(false);
+
                 break;
             case 2:
                 
@@ -142,9 +160,9 @@ public class MultiprocessorArchitecture extends Thread {
                 data = block2.getBusDataOut();
                 requestType = block2.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
-                block2.setBusDataIn(resultado);
+                if(requestType.equals("BR")){block2.controller.recordOnBR(direction,resultado);}
                 generateRequest(2, requestType,direction);
-                block2.setUsingBus(false);
+
                 break;
             case 3:
                 
@@ -153,9 +171,9 @@ public class MultiprocessorArchitecture extends Thread {
                 data = block3.getBusDataOut();
                 requestType = block3.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
-                block3.setBusDataIn(resultado);
+                if(requestType.equals("BR")){block3.controller.recordOnBR(direction,resultado);}
                 generateRequest(3, requestType,direction);
-                block3.setUsingBus(false);
+
                 break;
                 
             case 4:
@@ -165,9 +183,9 @@ public class MultiprocessorArchitecture extends Thread {
                 data = block4.getBusDataOut();
                 requestType = block4.getBusRequestType();
                 resultado = bus.busPetition(idProcessor, direction, data, requestType);
-                block4.setBusDataIn(resultado);
+                if(requestType.equals("BR")){block4.controller.recordOnBR(direction,resultado);}
                 generateRequest(4, requestType,direction);
-                block4.setUsingBus(false);
+
                 break;
 
         }
@@ -178,93 +196,117 @@ public class MultiprocessorArchitecture extends Thread {
     private void generateRequest(int id, String requestType, int direction) {
         switch (id) {
             case 1:
+                block1.setBusDataIn(-1);
+                block1.setBW(false);
+                block1.setBR(false);
                 if (requestType.equals("BW")) {
+                    block2.setBusDirectionIn(direction);
                     block2.setBR(false);
                     block2.setBW(true);
-                    block2.setBusDirectionIn(direction);
+                    block3.setBusDirectionIn(direction);
                     block3.setBR(false);
                     block3.setBW(true);
-                    block3.setBusDirectionIn(direction);
+                    block4.setBusDirectionIn(direction);
                     block4.setBR(false);
                     block4.setBW(true);
-                    block4.setBusDirectionIn(direction);
+                    
                 } else {
+                    block2.setBusDirectionIn(direction);
                     block2.setBR(true);
                     block2.setBW(false);
-                    block2.setBusDirectionIn(direction);
+                    block3.setBusDirectionIn(direction);
                     block3.setBR(true);
                     block3.setBW(false);
-                    block3.setBusDirectionIn(direction);
+                    block4.setBusDirectionIn(direction);
                     block4.setBR(true);
                     block4.setBW(false);
-                    block4.setBusDirectionIn(direction);
+                    
                 }
+                break;
             case 2:
+                block2.setBusDataIn(-1);
+                block2.setBW(false);
+                block2.setBR(false);
                 if (requestType.equals("BW")) {
+                    block1.setBusDirectionIn(direction);
                     block1.setBR(false);
                     block1.setBW(true);
-                    block1.setBusDirectionIn(direction);
+                    block3.setBusDirectionIn(direction);
                     block3.setBR(false);
                     block3.setBW(true);
-                    block3.setBusDirectionIn(direction);
+                    block4.setBusDirectionIn(direction);
                     block4.setBR(false);
                     block4.setBW(true);
-                    block4.setBusDirectionIn(direction);
+                    
                 } else {
+                    block1.setBusDirectionIn(direction);
                     block1.setBR(true);
                     block1.setBW(false);
-                    block1.setBusDirectionIn(direction);
+                    block3.setBusDirectionIn(direction);
                     block3.setBR(true);
                     block3.setBW(false);
-                    block3.setBusDirectionIn(direction);
+                    block4.setBusDirectionIn(direction);
                     block4.setBR(true);
                     block4.setBW(false);
-                    block4.setBusDirectionIn(direction);
+                    
                 }
+                break;
             case 3:
+                block3.setBusDataIn(-1);
+                block3.setBW(false);
+                block3.setBR(false);
                 if (requestType.equals("BW")) {
+                    block1.setBusDirectionIn(direction);
                     block1.setBR(false);
                     block1.setBW(true);
-                    block1.setBusDirectionIn(direction);
+                    block2.setBusDirectionIn(direction);
                     block2.setBR(false);
                     block2.setBW(true);
-                    block2.setBusDirectionIn(direction);
+                    block4.setBusDirectionIn(direction);
                     block4.setBR(false);
                     block4.setBW(true);
-                    block4.setBusDirectionIn(direction);
+                    
                 } else {
+                    block1.setBusDirectionIn(direction);
                     block1.setBR(true);
                     block1.setBW(false);
-                    block1.setBusDirectionIn(direction);
+                    block2.setBusDirectionIn(direction);
                     block2.setBR(true);
                     block2.setBW(false);
-                    block2.setBusDirectionIn(direction);
+                    block4.setBusDirectionIn(direction);
                     block4.setBR(true);
                     block4.setBW(false);
-                    block4.setBusDirectionIn(direction);
+                    
                 }
+                break;
             case 4:
+                block4.setBusDataIn(-1);
+                block4.setBW(false);
+                block4.setBR(false);
                 if (requestType.equals("BW")) {
+                    block1.setBusDirectionIn(direction);
                     block1.setBR(false);
                     block1.setBW(true);
-                    block1.setBusDirectionIn(direction);
+                    block2.setBusDirectionIn(direction);
                     block2.setBR(false);
                     block2.setBW(true);
-                    block2.setBusDirectionIn(direction);
+                    block3.setBusDirectionIn(direction);
                     block3.setBR(false);
                     block3.setBW(true);
-                    block3.setBusDirectionIn(direction);
+                    
                 } else {
+                    block1.setBusDirectionIn(direction);
                     block1.setBR(true);
                     block1.setBW(false);
-                    block1.setBusDirectionIn(direction);
+                    block2.setBusDirectionIn(direction);
                     block2.setBR(true);
                     block2.setBW(false);
-                    block2.setBusDirectionIn(direction);
+                    block3.setBusDirectionIn(direction);
                     block3.setBR(true);
                     block3.setBW(false);
-                    block3.setBusDirectionIn(direction);
+                    
                 }
+                break;
         }
     }
 
@@ -314,6 +356,10 @@ public class MultiprocessorArchitecture extends Thread {
             listTime1.add(cero);
             listTime2.add(cero);
         }
+        System.out.println("tiempo de cpu 1->"+listTime1.get(0));
+        System.out.println("tiempo de cpu 2->"+listTime1.get(1));
+        System.out.println("tiempo de cpu 3->"+listTime1.get(2));
+        System.out.println("tiempo de cpu 4->"+listTime1.get(3));
 
         sort();
 

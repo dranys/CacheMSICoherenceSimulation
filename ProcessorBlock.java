@@ -25,6 +25,7 @@ public class ProcessorBlock extends Thread {
     private Thread t;
 
     public ProcessorBlock(int id) {
+        
         this.pbName = "ProcessorBlock" + id;
         this.controller = new CacheController("Controlador" + id);
         this.cpu = new Cpu(id);
@@ -52,7 +53,7 @@ public class ProcessorBlock extends Thread {
             busDataOut = data;
             busDirectionOut = direction;
             busIdentifier = cpu.getIdentifier();
-
+       
             int busSignalOut = controller.connectCacheCpu(operation, direction, data);
             if (busSignalOut == 1) {
                 cpu.pauseCpu();
@@ -85,6 +86,7 @@ public class ProcessorBlock extends Thread {
                 Thread.sleep(50);
 
                 while (usingBus) {//this block pause cpu for waiting to connect and comunucate
+                    
                     busCheck();
                     cpu.pauseCpu();
                     Thread.sleep(50);
@@ -102,14 +104,13 @@ public class ProcessorBlock extends Thread {
 
     private void busCheck() {
         
-        if(busRequestType.equals("BR")){//waiting for data to read from memory
-            controller.recordOnBR(busDirectionOut, busDataIn);//save the data 
-        }
+        //if(busRequestType.equals("BR")){//waiting for data to read from memory
+            //controller.recordOnBR(busDirectionOut, busDataIn);//save the data 
+        //}
+        
         if (busDirectionIn != busDirectionOut) {
+            System.out.println("bus checking BW values BW: "+BW+" BR: "+BR+" direction in: "+busDirectionIn+" direction out: "+busDirectionOut);
             controller.busRead(BW, BR, busDirectionIn);
-            this.BW = false;
-            this.BR = false;
-            busDirectionIn = -1;
         }
     }
 
@@ -160,6 +161,7 @@ public class ProcessorBlock extends Thread {
     public boolean getUsingBus(){
         return this.usingBus;
     }
+   
     
     public void setUsingBus(boolean used){
         this.usingBus = used;

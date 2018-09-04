@@ -31,6 +31,7 @@ public class CacheController{
                 } else if (action.equals("PR")) {//no hace nada
 
                 } else if (action.equals("BW")) {
+                    System.out.println("Modificado a invalido, direccion "+direction);
                     cache.setCacheState(direction, "I");
                 } else if (action.equals("BR")) {
                     cache.setCacheState(direction, "S");

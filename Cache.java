@@ -6,12 +6,12 @@
 package cachecoherencesimulation;
 
 /**
- *
+ * This class implements a physical cache, it has 16 data blocks 
  * @author daniel
  */
 public class Cache {
-    private String name;
-    private CacheLine line0;
+    private String name;//defining name
+    private CacheLine line0;//declares of each line of memory
     private CacheLine line1;
     private CacheLine line2;
     private CacheLine line3;
@@ -28,10 +28,14 @@ public class Cache {
     private CacheLine line14;
     private CacheLine line15;
     
+    /**
+     * Cache Constructor
+     * @param name of the new created 
+     */
     public Cache(String name){
-        this.name = name;
-        String state = "S";
-        line0 = new CacheLine(state, 0);
+        this.name = name;//setting the name
+        String state = "S";//initial state of all cache lines S: shared
+        line0 = new CacheLine(state, 0);//initial value of all cache lines 0
         line1 = new CacheLine(state, 0);
         line2 = new CacheLine(state, 0);
         line3 = new CacheLine(state, 0);
@@ -49,10 +53,15 @@ public class Cache {
         line15 = new CacheLine(state, 0);
         
     }
+    /**
+     * Set the data contained in at specific position of cache
+     * @param direction Direction of cache
+     * @param data Data to write in cache
+     */
     public void setCacheData(int direction, int data){
-        switch(direction){
+        switch(direction){// choose where to put the data 
             case 0:
-                line0.setData(data);
+                line0.setData(data);//putting the data
                 break;
             case 1:
                 line1.setData(data);
@@ -101,11 +110,15 @@ public class Cache {
                 break;
         }
     }
-    
+    /**
+     * Set the state (S shared, M modified, I invalid) of specified direction
+     * @param direction Direction of line of cache
+     * @param state The required state to write
+     */
     public void setCacheState(int direction, String state){
-        switch(direction){
+        switch(direction){//choose the direction
             case 0:
-                line0.setState(state);
+                line0.setState(state);//set the state
                 break;
             case 1:
                 line1.setState(state);
@@ -154,12 +167,16 @@ public class Cache {
                 break;
         }
     }
-    
+    /**
+     * Gets the cache state of specified direction
+     * @param cacheDirection direction on cache
+     * @return the state (S: shared, M: modified, I: invalid) default value ""
+     */
     public String getCacheState(int cacheDirection){
-        String cacheState="";
-        switch(cacheDirection){
+        String cacheState="";//default value
+        switch(cacheDirection){//choose the direction
             case 0:
-                cacheState = line0.getState();
+                cacheState = line0.getState();//get the state
                 break;
             case 1:
                 cacheState = line1.getState();
@@ -209,11 +226,16 @@ public class Cache {
         }
         return cacheState;
     }
+    /**
+     * Gets the data contained on a specified direction
+     * @param cacheDirection direction on cache
+     * @return the cache data
+     */
     public int getCacheData(int cacheDirection){
         int cacheData = 0;
-        switch(cacheDirection){
+        switch(cacheDirection){//choose direction
             case 0:
-                cacheData = line0.getData();
+                cacheData = line0.getData();//get direction
                 break;
             case 1:
                 cacheData = line1.getData();

@@ -6,12 +6,12 @@
 package cachecoherencesimulation;
 
 /**
- *
+ * This class implements a main memory module
  * @author daniel
  */
 public class MainMemory {
     
-    private MemoryLine line0;
+    private MemoryLine line0;//it has 16 lines of memory
     private MemoryLine line1;
     private MemoryLine line2;
     private MemoryLine line3;
@@ -29,7 +29,7 @@ public class MainMemory {
     private MemoryLine line15;
     
     MainMemory(){
-    this.line0 = new MemoryLine(0, 0);
+    this.line0 = new MemoryLine(0, 0);//setting up the inicial values of the memory, cero for content and cero for processor's ID
     this.line1 = new MemoryLine(0, 0);
     this.line2 = new MemoryLine(0, 0);
     this.line3 = new MemoryLine(0, 0);
@@ -48,12 +48,18 @@ public class MainMemory {
     
     }
     
+    /**
+     * Write new values on a memory line.
+     * @param direction the direction to be stored
+     * @param data the data to be writed
+     * @param id_processor the processor's Id who do the write
+     */
     public void recordData(int direction, int data, int id_processor){
-        //System.out.println("guardando en memoria dato: "+data+"direccion: "+direction+" ID: "+id_processor);
-        switch(direction){
+
+        switch(direction){//choose the direction
             case 0:
-                line0.setData(data);
-                line0.setIdProcessor(id_processor);
+                line0.setData(data);//set the data 
+                line0.setIdProcessor(id_processor);//set the processor's id
                 break;
             case 1:
                 line1.setData(data);
@@ -118,6 +124,11 @@ public class MainMemory {
         }
         
     }
+    /**
+     * Read data of the specified direction
+     * @param direction the direction
+     * @return the value read
+     */
     public int readData(int direction){
         //System.out.println("leyendo en memoria direccion: "+direction);
         int data = 0;
@@ -174,6 +185,11 @@ public class MainMemory {
         return data;
         
     }
+    /**
+     * getter of the processor's id
+     * @param direction direction of memory
+     * @return the processor's id
+     */
     public int getIdProc(int direction){
         
         int data = 0;

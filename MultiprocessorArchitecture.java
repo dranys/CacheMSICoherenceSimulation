@@ -11,31 +11,37 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * This class join the logic cache coherence system, including busses interfaces
+ * processor unit and internal processor block implementation. It is implemented with thread because is analise at real 
+ * time all the events that take place in to the system, between processor blocks
  * @author daniel
  */
 public class MultiprocessorArchitecture extends Thread {
 
-    BusInterface bus;
-    private Thread t;
-    ProcessorBlock block1;
+    BusInterface bus;//instance of BusInterface
+    private Thread t;// thread instance
+    ProcessorBlock block1;//instance of the 4 processor blocks
     ProcessorBlock block2;
     ProcessorBlock block3;
     ProcessorBlock block4;
-    List<Long> listTime1, listTime2;
-    List<Integer> listOrdered;
+    List<Long> listTime1, listTime2;//list to store times where each processor block request the bus usage
+    List<Integer> listOrdered;//ordered list to execute each processor block
     boolean transition;
-    int cycles;
+    int cycles;//counter of the cycles of the system
 
+    /**
+     * Constructor: create the instance of the system of cache coherence
+     */
     public MultiprocessorArchitecture() {
-        this.transition = true;
+        this.transition = true;//setting up initial values
         this.cycles = 0;
-        bus = new BusInterface("bus");
+        
+        bus = new BusInterface("bus");//create an instance of bus interface
         listTime1 = new ArrayList<>(4);
         listTime2 = new ArrayList<>(4);
         listOrdered = new ArrayList<>(4);
         
-        block1 = new ProcessorBlock(1);
+        block1 = new ProcessorBlock(1);//start 4 simultaneous processor's unit
         block1.start();
         
         block2 = new ProcessorBlock(2);
@@ -49,21 +55,24 @@ public class MultiprocessorArchitecture extends Thread {
 
     }
 
+    /**
+     * infinity loop of the system
+     */
     @Override
     @SuppressWarnings({"SleepWhileInLoop", "CallToThreadYield"})
     public void run() {
 
         try {
 
-            for (;;) {
+            for (;;) {//infinity loop
                if(transition){
-                    this.cycles++;
-                    Thread.sleep(100);
-                    readPetitions();
-                    executePetitions();
-                    listTime1.clear();
-                    listTime2.clear();
-                    listOrdered.clear();}
+                    this.cycles++;//increase cycles counter
+                    Thread.sleep(100);//validate the bus each 0.1 second
+                    readPetitions();//bus petitions are read
+                    executePetitions();//execute those petitions in order to avoid incoherence
+                    listTime1.clear();//clean the processors queue
+                    listTime2.clear();//clean auxiliar processors queue
+                    listOrdered.clear();}//ordered execution queue
                  
                 
 
@@ -76,6 +85,9 @@ public class MultiprocessorArchitecture extends Thread {
 
     }
 
+    /**
+     * start the system thread.
+     */
     @Override
     public void start() {
         if (t == null) {
@@ -83,27 +95,35 @@ public class MultiprocessorArchitecture extends Thread {
             t.start();
         }
     }
-    
+    /**
+     * used to pause the system throught GUI
+     */
     public void startMultiprocessor(){
         this.transition = true;
     }
+    
+    /**
+     * resume the paused the system throught GUI
+     */
     public void stopMultiprocessor(){
         this.transition = false;
     }
 
+    /**
+     * ordered execution of processors queue
+     */
     private void executePetitions() {
 
         int idProcessor = 0;
-        if (!listOrdered.isEmpty()) {
-            for (int i = 0; i < 4; i++) {
+        if (!listOrdered.isEmpty()) {//sort the processors in case the queue is not empty
+            for (int i = 0; i < 4; i++) {//1 to 4 processor units
                 idProcessor = listOrdered.get(i);
-                //System.out.println("id-->"+idProcessor);
                 if (idProcessor != 0) {
                     try {
                         System.out.println("ejecutando-->"+idProcessor);
-                        execAux(idProcessor);
+                        execAux(idProcessor);//execute a particular id
                         Thread.sleep(200);//waiting for cpu to read the bus
-                        usingBus(idProcessor);
+                        usingBus(idProcessor);//set the bus status as busy
                     } catch (InterruptedException ex) {
                         Logger.getLogger(MultiprocessorArchitecture.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -114,11 +134,14 @@ public class MultiprocessorArchitecture extends Thread {
             //System.out.println("lista de peticiones vacía");
         }
     }
-    
+    /**
+     * set the status of the bus, used or not
+     * @param id of the processor that requested the bus
+     */
     private void usingBus(int id){
-        switch(id){
+        switch(id){//choose id
             case 1:
-                block1.setUsingBus(false);
+                block1.setUsingBus(false);//turno off 
                 break;
             case 2:
                 block2.setUsingBus(false);
@@ -133,24 +156,29 @@ public class MultiprocessorArchitecture extends Thread {
     
     }
 
+    /**
+     * Aux method to help the processing of each processor block
+     * @param id
+     * @return 
+     */
     private int execAux(int id) {
         //System.out.println("ejecutando bus");
-        int idProcessor = 0;
+        int idProcessor = 0;//clean last id and others variables
         int direction = 0;
         int data = 0;
         String requestType = "";
         int resultado = 0;
 
-        switch (id) {
+        switch (id) {//choose id
             case 1:
                 
-                idProcessor = 1;
-                direction = block1.getBusDirectionOut();
-                data = block1.getBusDataOut();
-                requestType = block1.getBusRequestType();
-                resultado = bus.busPetition(idProcessor, direction, data, requestType);
-                if(requestType.equals("BR")){block1.controller.recordOnBR(direction,resultado);}
-                generateRequest(1, requestType,direction);
+                idProcessor = 1;//set the id of processor
+                direction = block1.getBusDirectionOut();//get address requested of the processor block
+                data = block1.getBusDataOut();//get data of the processor
+                requestType = block1.getBusRequestType();//get the type of request BW or BR
+                resultado = bus.busPetition(idProcessor, direction, data, requestType);//execute bus petition
+                if(requestType.equals("BR")){block1.controller.recordOnBR(direction,resultado);}//returns a value in case of bus read
+                generateRequest(1, requestType,direction);//generate alerts to others processor blocks BW or BR and address 
 
                 break;
             case 2:
@@ -193,14 +221,20 @@ public class MultiprocessorArchitecture extends Thread {
         return resultado;
     }
 
+    /**
+     * Generate an alert to others processor blocks, of BW, BR in an specific address 
+     * @param id of the processor bloock that generate the alert
+     * @param requestType the type of request BW or BR
+     * @param direction the address
+     */
     private void generateRequest(int id, String requestType, int direction) {
-        switch (id) {
-            case 1:
+        switch (id) {//choose id of processor
+            case 1://cleans the last flags
                 block1.setBusDataIn(-1);
                 block1.setBW(false);
                 block1.setBR(false);
-                if (requestType.equals("BW")) {
-                    block2.setBusDirectionIn(direction);
+                if (requestType.equals("BW")) {//update in case of BW
+                    block2.setBusDirectionIn(direction);//set direction  and BW , BR flags
                     block2.setBR(false);
                     block2.setBW(true);
                     block3.setBusDirectionIn(direction);
@@ -210,7 +244,7 @@ public class MultiprocessorArchitecture extends Thread {
                     block4.setBR(false);
                     block4.setBW(true);
                     
-                } else {
+                } else {//update in case of BR
                     block2.setBusDirectionIn(direction);
                     block2.setBR(true);
                     block2.setBW(false);
@@ -310,25 +344,28 @@ public class MultiprocessorArchitecture extends Thread {
         }
     }
 
+    /**
+     * Read all the processor block that are requesting for the bus
+     */
     private void readPetitions() {
        
-        boolean ref1 = block1.getUsingBus();
+        boolean ref1 = block1.getUsingBus();//read state of need of the bus
         boolean ref2 = block2.getUsingBus();
         boolean ref3 = block3.getUsingBus();
         boolean ref4 = block4.getUsingBus();
 
-        long time1 = block1.getTime();
-        long time2 = block2.getTime();
+        long time1 = block1.getTime();//get time when the processor request the bus
+        long time2 = block2.getTime();// to maintain order execution
         long time3 = block3.getTime();
         long time4 = block4.getTime();
        
         long cero = 0;
         
 
-        if (ref1 == true) {
+        if (ref1 == true) {///add the times to queues
             listTime1.add(time1);
             listTime2.add(time1);
-        } else {
+        } else {//add cero in case there is not a request
             listTime1.add(cero);
             listTime2.add(cero);
         }
@@ -356,40 +393,42 @@ public class MultiprocessorArchitecture extends Thread {
             listTime1.add(cero);
             listTime2.add(cero);
         }
-        System.out.println("tiempo de cpu 1->"+listTime1.get(0));
-        System.out.println("tiempo de cpu 2->"+listTime1.get(1));
-        System.out.println("tiempo de cpu 3->"+listTime1.get(2));
-        System.out.println("tiempo de cpu 4->"+listTime1.get(3));
 
-        sort();
+        sort();//sort the order execution
 
     }
 
+    /**
+     * method to create order execution of each processor block
+     */
     private void sort() {//
         int index = 0;
-        long suma = listTime1.get(0) + listTime1.get(1) + listTime1.get(2) + listTime1.get(3);
+        long suma = listTime1.get(0) + listTime1.get(1) + listTime1.get(2) + listTime1.get(3);//check if the list in empty
         if (suma == 0) { //System.out.println("no petitions found");
         } else {
-            for (int i = 0; i < 4; i++) {
-                long MinorElement = getMinorElement();
+            for (int i = 0; i < 4; i++) {//go throught each CPU
+                long MinorElement = getMinorElement();//algoritm implemented insertion sort
                 if(MinorElement == 0){
                     index = 8;
                     listOrdered.add(index);
                 }
                 else{
-                    index = getIndexOf(MinorElement);
-                    listOrdered.add(index+1);
+                    index = getIndexOf(MinorElement);//look for the element of the CPU
+                    listOrdered.add(index+1);//add the cpu id to the ordered list
                 }
-                //System.out.println("minorElement-->"+MinorElement+" index-->"+index);
                 
             }
-            //System.out.println("ordenado--> 0:"+listOrdered.get(0)+" 1:"+listOrdered.get(1)+" 2:"+listOrdered.get(2)+" 3:"+listOrdered.get(3));
         }
         
         
 
     }
-
+    
+    /**
+     * Auxiliar method of the sorting algoritm that
+     * get the minor element
+     * @return the minor element 
+     */
     private long getMinorElement() {
         long menor = listTime1.get(0);
         long menor_aux = 0;
@@ -406,6 +445,11 @@ public class MultiprocessorArchitecture extends Thread {
         return menor;
     }
 
+    /**
+     * Getter of the index of specified data
+     * @param data
+     * @return 
+     */
     private int getIndexOf(long data) {
         int index = 0;
 

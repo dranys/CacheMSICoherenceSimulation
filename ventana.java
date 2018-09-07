@@ -10,32 +10,33 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 
 /**
- *
+ * This class implements the graphical user interface
+ * of the cache coherence simulation.
  * @author daniel
  */
 public class ventana extends javax.swing.JFrame {
 
-    MultiprocessorArchitecture a1;
-    boolean running;
+    MultiprocessorArchitecture a1;//instance of multiprocessor architecture module
+    boolean running;//flag that is set when the system is running
 
     /**
-     * Creates new form ventana
+     * Creates new form ventana and set the initial values
      */
     public ventana() {
-        this.running = true;
+        this.running = true;//true while running
 
-        a1 = new MultiprocessorArchitecture();
-        a1.start();
-        initComponents();
+        a1 = new MultiprocessorArchitecture();//create and start thread of the backend system
+        a1.start();//start
+        initComponents();//gui components
 
-        updateWindow();
+        updateWindow();//window refresh each 50 ms
         Timer timer = new Timer(50, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                updateWindow();
+                updateWindow();//perform this acction each refresh event
             }
         });
-        timer.start();
+        timer.start();//start timer of refreshing
 
     }
 
@@ -1901,6 +1902,7 @@ public class ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_stopButtonMouseClicked
 
     /**
+     * main of the window and system
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -1929,7 +1931,7 @@ public class ventana extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {//start and show the window
             @Override
             public void run() {
                 new ventana().setVisible(true);
@@ -1937,6 +1939,9 @@ public class ventana extends javax.swing.JFrame {
         });
 
     }
+    /**
+     * this method update all the labels that contain the simulation information
+     */
 
     public void updateWindow() {
         updateMisc();
@@ -1947,6 +1952,9 @@ public class ventana extends javax.swing.JFrame {
         updateCache3();
         updateCache4();
     }
+    /**
+     * update cycle label and miss counters
+     */
     public void updateMisc(){
         cycle_number.setText(String.valueOf(a1.cycles));
         miss_cpu1.setText(String.valueOf(a1.block1.controller.getMissCounter()));
@@ -1954,6 +1962,9 @@ public class ventana extends javax.swing.JFrame {
         miss_cpu3.setText(String.valueOf(a1.block3.controller.getMissCounter()));
         miss_cpu4.setText(String.valueOf(a1.block4.controller.getMissCounter()));
     }
+    /**
+     * update action and address labels
+     */
     public void updateCPUstates(){
         action_cpu1.setText(String.valueOf(a1.block1.cpu.getRequest()));
         action_cpu2.setText(String.valueOf(a1.block2.cpu.getRequest()));
@@ -1966,6 +1977,9 @@ public class ventana extends javax.swing.JFrame {
         direction_cpu4.setText(String.valueOf(a1.block4.cpu.getDirection()));
     }
 
+    /**
+     * update memory labels
+     */
     public void updateMemory() {
         memiD0.setText(String.valueOf(a1.bus.memory.getIdProc(0)));
         memiD1.setText(String.valueOf(a1.bus.memory.getIdProc(1)));
@@ -2002,6 +2016,9 @@ public class ventana extends javax.swing.JFrame {
         memoryBlock15.setText(String.valueOf(a1.bus.memory.readData(15)));
 
     }
+    /**
+     * update labels on cache 1
+     */
 
     public void updateCache1() {
         cache1_Block0.setText(String.valueOf(a1.block1.controller.cache.getCacheData(0)));
@@ -2038,7 +2055,10 @@ public class ventana extends javax.swing.JFrame {
         cacheState1_15.setText(String.valueOf(a1.block1.controller.cache.getCacheState(15)));
 
     }
-
+    
+    /**
+     * update labels on cache 2
+     */
     public void updateCache2() {
 
         cache2_Block0.setText(String.valueOf(a1.block2.controller.cache.getCacheData(0)));
@@ -2074,7 +2094,10 @@ public class ventana extends javax.swing.JFrame {
         cache2_Block15.setText(String.valueOf(a1.block2.controller.cache.getCacheData(15)));
         cacheState2_15.setText(String.valueOf(a1.block2.controller.cache.getCacheState(15)));
     }
-
+    
+    /**
+     * update labels on cache 3
+     */
     public void updateCache3() {
         cache3_Block0.setText(String.valueOf(a1.block3.controller.cache.getCacheData(0)));
         cacheState3_0.setText(String.valueOf(a1.block3.controller.cache.getCacheState(0)));
@@ -2110,6 +2133,9 @@ public class ventana extends javax.swing.JFrame {
         cacheState3_15.setText(String.valueOf(a1.block3.controller.cache.getCacheState(15)));
     }
 
+     /**
+     * update labels on cache 4
+     */
     public void updateCache4() {
         cache4_Block0.setText(String.valueOf(a1.block4.controller.cache.getCacheData(0)));
         cacheState4_0.setText(String.valueOf(a1.block4.controller.cache.getCacheState(0)));

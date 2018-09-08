@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class Cpu extends Thread {
 
-    private Thread t;
+    Thread t;
     private final int identifier;//ID of the processor
     private String request;//String of requested activity, (read, write, execute)
     private int direction;//Direction of the requested activity
@@ -162,5 +162,6 @@ public class Cpu extends Thread {
     public void resumeCpu() {
         this.pausedCpu = false;
     }
+    
 
 }

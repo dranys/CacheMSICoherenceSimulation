@@ -66,8 +66,9 @@ public class MultiprocessorArchitecture extends Thread {
 
             for (;;) {//infinity loop
                if(transition){
+                    System.out.println("ciclos "+cycles);
                     this.cycles++;//increase cycles counter
-                    Thread.sleep(100);//validate the bus each 0.1 second
+                    Thread.sleep(300);//validate the bus each 0.1 second
                     readPetitions();//bus petitions are read
                     executePetitions();//execute those petitions in order to avoid incoherence
                     listTime1.clear();//clean the processors queue
@@ -119,14 +120,14 @@ public class MultiprocessorArchitecture extends Thread {
             for (int i = 0; i < 4; i++) {//1 to 4 processor units
                 idProcessor = listOrdered.get(i);
                 if (idProcessor != 0) {
-                    try {
-                        System.out.println("ejecutando-->"+idProcessor);
-                        execAux(idProcessor);//execute a particular id
-                        Thread.sleep(200);//waiting for cpu to read the bus
-                        usingBus(idProcessor);//set the bus status as busy
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(MultiprocessorArchitecture.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+                    System.out.println("ejecutando-->"+idProcessor);
+                    execAux(idProcessor);//execute a particular id
+                    usingBus(idProcessor);//set the bus status as busy
+                }
+                try {
+                    Thread.sleep(200);//waiting for cpu to read the bus
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(MultiprocessorArchitecture.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }
@@ -460,6 +461,25 @@ public class MultiprocessorArchitecture extends Thread {
             }
         }
         return index;
+    }
+    /**
+     * this method is used to stop all the system threads
+     */
+    public void pauseMultiprocessor() throws InterruptedException{
+        
+       
+       
+    
+    }
+    
+    /**
+     * this method is used to resume all the system threads
+     */
+    public void resumeMultiprocessor(){
+        
+        
+        
+    
     }
 
 }

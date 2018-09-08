@@ -7,6 +7,9 @@ package cachecoherencesimulation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.SwingUtilities;
 import javax.swing.Timer;
 
 /**
@@ -30,7 +33,7 @@ public class ventana extends javax.swing.JFrame {
         initComponents();//gui components
 
         updateWindow();//window refresh each 50 ms
-        Timer timer = new Timer(50, new ActionListener() {
+        Timer timer = new Timer(10, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 updateWindow();//perform this acction each refresh event
@@ -52,7 +55,7 @@ public class ventana extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator10 = new javax.swing.JSeparator();
-        startButton = new javax.swing.JButton();
+        resumeButton = new javax.swing.JButton();
         cicle_label = new javax.swing.JLabel();
         cycle_number = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -321,7 +324,7 @@ public class ventana extends javax.swing.JFrame {
         action_cpu3 = new javax.swing.JLabel();
         direction_cpu3 = new javax.swing.JLabel();
         action_cpu4 = new javax.swing.JLabel();
-        stopButton = new javax.swing.JToggleButton();
+        pauseButton = new javax.swing.JToggleButton();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel4 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -330,33 +333,43 @@ public class ventana extends javax.swing.JFrame {
         miss_cpu1 = new javax.swing.JLabel();
         miss_cpu2 = new javax.swing.JLabel();
         miss_cpu3 = new javax.swing.JLabel();
+        missIcon1 = new javax.swing.JLabel();
+        missIcon4 = new javax.swing.JLabel();
+        missIcon3 = new javax.swing.JLabel();
+        missIcon2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        startButton.setText("start");
-        startButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        resumeButton.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        resumeButton.setForeground(java.awt.Color.green);
+        resumeButton.setText("Resume");
+        resumeButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                startButtonMouseClicked(evt);
+                resumeButtonMouseClicked(evt);
             }
         });
-        startButton.addActionListener(new java.awt.event.ActionListener() {
+        resumeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                startButtonActionPerformed(evt);
+                resumeButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(startButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 70, 70));
+        getContentPane().add(resumeButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 70, 30));
 
-        cicle_label.setText("cicle #");
-        getContentPane().add(cicle_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        cicle_label.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        cicle_label.setForeground(java.awt.Color.blue);
+        cicle_label.setText("CYCLE #");
+        getContentPane().add(cicle_label, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
+        cycle_number.setFont(new java.awt.Font("Ubuntu", 3, 48)); // NOI18N
+        cycle_number.setForeground(java.awt.Color.green);
         cycle_number.setText("0");
         cycle_number.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cycle_numberMouseClicked(evt);
             }
         });
-        getContentPane().add(cycle_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 30, -1));
+        getContentPane().add(cycle_number, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 180, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cpu1.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 130, 120));
@@ -655,17 +668,21 @@ public class ventana extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 293, -1, -1));
 
+        jLabel6.setForeground(java.awt.Color.blue);
         jLabel6.setText("Cache1");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 260, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
 
+        jLabel7.setForeground(java.awt.Color.blue);
         jLabel7.setText("Cache2");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 260, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 260, -1, -1));
 
+        jLabel8.setForeground(java.awt.Color.blue);
         jLabel8.setText("Cache3");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 260, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 260, -1, -1));
 
+        jLabel9.setForeground(java.awt.Color.blue);
         jLabel9.setText("Cache4");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 260, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 260, -1, -1));
 
         jPanel2.setBackground(java.awt.Color.lightGray);
         jPanel2.setBorder(new javax.swing.border.MatteBorder(null));
@@ -1517,8 +1534,10 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(273, 293, -1, -1));
 
         jLabel201.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/slot_001.png"))); // NOI18N
-        getContentPane().add(jLabel201, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, 70, 80));
+        getContentPane().add(jLabel201, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 70, 80));
 
+        jLabel202.setFont(new java.awt.Font("Ubuntu", 1, 12)); // NOI18N
+        jLabel202.setForeground(java.awt.Color.blue);
         jLabel202.setText("Main Memory");
         getContentPane().add(jLabel202, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 258, -1, -1));
 
@@ -1807,7 +1826,7 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 208, 1251, 10));
 
         direction_cpu4.setForeground(java.awt.SystemColor.desktop);
-        direction_cpu4.setText("jLabel4");
+        direction_cpu4.setText("jlabel");
         getContentPane().add(direction_cpu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 220, -1, -1));
 
         action_cpu1.setForeground(java.awt.SystemColor.desktop);
@@ -1815,7 +1834,7 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(action_cpu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
 
         direction_cpu1.setForeground(java.awt.SystemColor.desktop);
-        direction_cpu1.setText("jLabel4");
+        direction_cpu1.setText("jlabel");
         getContentPane().add(direction_cpu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
 
         action_cpu2.setForeground(java.awt.SystemColor.desktop);
@@ -1823,7 +1842,7 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(action_cpu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 180, -1, -1));
 
         direction_cpu2.setForeground(java.awt.SystemColor.desktop);
-        direction_cpu2.setText("jLabel4");
+        direction_cpu2.setText("jlabel");
         getContentPane().add(direction_cpu2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, -1, -1));
 
         action_cpu3.setForeground(java.awt.SystemColor.desktop);
@@ -1831,20 +1850,28 @@ public class ventana extends javax.swing.JFrame {
         getContentPane().add(action_cpu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 180, -1, -1));
 
         direction_cpu3.setForeground(java.awt.SystemColor.desktop);
-        direction_cpu3.setText("jLabel4");
+        direction_cpu3.setText("jlabel");
         getContentPane().add(direction_cpu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 220, -1, -1));
 
         action_cpu4.setForeground(java.awt.SystemColor.desktop);
         action_cpu4.setText("jLabel4");
         getContentPane().add(action_cpu4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 180, -1, -1));
 
-        stopButton.setText("stop");
-        stopButton.addMouseListener(new java.awt.event.MouseAdapter() {
+        pauseButton.setBackground(java.awt.Color.gray);
+        pauseButton.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        pauseButton.setForeground(javax.swing.UIManager.getDefaults().getColor("ToolBar.dockingForeground"));
+        pauseButton.setText("Pause");
+        pauseButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                stopButtonMouseClicked(evt);
+                pauseButtonMouseClicked(evt);
             }
         });
-        getContentPane().add(stopButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 70, 70));
+        pauseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pauseButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pauseButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 70, 30));
         getContentPane().add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 1250, 10));
 
         jLabel4.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
@@ -1882,24 +1909,77 @@ public class ventana extends javax.swing.JFrame {
         miss_cpu3.setText("jLabel28");
         getContentPane().add(miss_cpu3, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 140, -1, -1));
 
+        missIcon1.setForeground(java.awt.Color.red);
+        missIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cachecoherencesimulation/miss_icon.png"))); // NOI18N
+        missIcon1.setText("MISS");
+        getContentPane().add(missIcon1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 90, -1));
+
+        missIcon4.setForeground(java.awt.Color.red);
+        missIcon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cachecoherencesimulation/miss_icon.png"))); // NOI18N
+        missIcon4.setText("MISS");
+        getContentPane().add(missIcon4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 260, -1, -1));
+
+        missIcon3.setForeground(java.awt.Color.red);
+        missIcon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cachecoherencesimulation/miss_icon.png"))); // NOI18N
+        missIcon3.setText("MISS");
+        getContentPane().add(missIcon3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 260, -1, -1));
+
+        missIcon2.setForeground(java.awt.Color.red);
+        missIcon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cachecoherencesimulation/miss_icon.png"))); // NOI18N
+        missIcon2.setText("MISS");
+        getContentPane().add(missIcon2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 260, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
+    private void resumeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resumeButtonActionPerformed
         
-    }//GEN-LAST:event_startButtonActionPerformed
+         java.awt.EventQueue.invokeLater(new Runnable() {//start and show the window
+            @Override
+            public void run() {
+                a1.transition = true;
+            }
+        });
+    }//GEN-LAST:event_resumeButtonActionPerformed
 
-    private void startButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startButtonMouseClicked
-       //a1.startMultiprocessor();
-    }//GEN-LAST:event_startButtonMouseClicked
+    private void resumeButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resumeButtonMouseClicked
+       java.awt.EventQueue.invokeLater(new Runnable() {//start and show the window
+            @Override
+            public void run() {
+                a1.transition = true;
+            }
+        });
+    }//GEN-LAST:event_resumeButtonMouseClicked
 
     private void cycle_numberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cycle_numberMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_cycle_numberMouseClicked
 
-    private void stopButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_stopButtonMouseClicked
+    private void pauseButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pauseButtonMouseClicked
         //a1.stopMultiprocessor();
-    }//GEN-LAST:event_stopButtonMouseClicked
+    }//GEN-LAST:event_pauseButtonMouseClicked
+
+    private void pauseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pauseButtonActionPerformed
+        
+        java.awt.EventQueue.invokeLater(new Runnable() {//start and show the window
+            @Override
+            public void run() {
+                a1.transition = false;
+            }
+        });
+        
+        
+      
+            
+            
+      
+        
+        /*try {
+            a1.pauseMultiprocessor();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(ventana.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+    }//GEN-LAST:event_pauseButtonActionPerformed
 
     /**
      * main of the window and system
@@ -1944,6 +2024,7 @@ public class ventana extends javax.swing.JFrame {
      */
 
     public void updateWindow() {
+        updateMissSignals();
         updateMisc();
         updateCPUstates();
         updateMemory();
@@ -1953,9 +2034,32 @@ public class ventana extends javax.swing.JFrame {
         updateCache4();
     }
     /**
+     * this function update the signal alert when misses ocurred
+     */
+    public void updateMissSignals(){
+        if(a1.block1.controller.getMissSignal()>0){
+            missIcon1.setVisible(true);
+        }
+        else{missIcon1.setVisible(false);}
+        if(a1.block2.controller.getMissSignal()>0){
+            missIcon2.setVisible(true);
+        }
+        else{missIcon2.setVisible(false);}
+        if(a1.block3.controller.getMissSignal()>0){
+            missIcon3.setVisible(true);
+        }
+        else{missIcon3.setVisible(false);}
+        if(a1.block4.controller.getMissSignal()>0){
+            missIcon4.setVisible(true);
+        }
+        else{missIcon4.setVisible(false);}
+        
+    }
+    /**
      * update cycle label and miss counters
      */
     public void updateMisc(){
+        
         cycle_number.setText(String.valueOf(a1.cycles));
         miss_cpu1.setText(String.valueOf(a1.block1.controller.getMissCounter()));
         miss_cpu2.setText(String.valueOf(a1.block2.controller.getMissCounter()));
@@ -2447,11 +2551,15 @@ public class ventana extends javax.swing.JFrame {
     private javax.swing.JLabel memoryBlock7;
     private javax.swing.JLabel memoryBlock8;
     private javax.swing.JLabel memoryBlock9;
+    private javax.swing.JLabel missIcon1;
+    private javax.swing.JLabel missIcon2;
+    private javax.swing.JLabel missIcon3;
+    private javax.swing.JLabel missIcon4;
     private javax.swing.JLabel miss_cpu1;
     private javax.swing.JLabel miss_cpu2;
     private javax.swing.JLabel miss_cpu3;
     private javax.swing.JLabel miss_cpu4;
-    private javax.swing.JButton startButton;
-    private javax.swing.JToggleButton stopButton;
+    private javax.swing.JToggleButton pauseButton;
+    private javax.swing.JButton resumeButton;
     // End of variables declaration//GEN-END:variables
 }

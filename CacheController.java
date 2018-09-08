@@ -18,6 +18,7 @@ public class CacheController{
     Cache cache;//instance of cache
     private int missCounter;//miss counter
     private final String name;//the name of cache controller unit
+    private int missSignal;//this is a counter to display a signal on screen when a cache miss ocurred
 
     /**
      * Constructor of cache controller
@@ -27,6 +28,7 @@ public class CacheController{
         this.name = name;//set the name
         this.missCounter = 0;//miss counter initiated as cero
         this.cache = new Cache("cacheUnit");//instance of cache unit
+        this.missSignal = 0;
     }
 
     /**
@@ -75,6 +77,7 @@ public class CacheController{
                 } else if (action.equals("PR")) {
                     cache.setCacheState(direction, "S");
                     missCounter++;
+                    missSignal = 12;
                     response = 2;//generate bus read
                 } else if (action.equals("BR") || action.equals("BW")) {
                 }
@@ -128,5 +131,18 @@ public class CacheController{
      */
     public int getMissCounter(){
         return missCounter;
+    }
+    /**
+     * getter of miss signal counter
+     * @return 
+     */
+    public int getMissSignal(){
+        return this.missSignal;
+    }
+    /**
+     * decrement value of miss signal
+     */
+    public void decrementMissSignal(){
+        this.missSignal = missSignal - 1;
     }
 }

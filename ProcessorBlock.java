@@ -6,6 +6,8 @@
 package cachecoherencesimulation;
 
 import java.util.concurrent.Semaphore;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * This class implements a processor block, composed of CPU unit, a Cache memory block and
@@ -82,17 +84,19 @@ public class ProcessorBlock extends Thread {
         try {
 
             for (;;) {
-                busCheck();//checking the bus lines to read BW or BR
-                CPUconnection();//set a new connection of the cpu - cache
-                Thread.sleep(50);//process repeated each 50 ms
+                
+      
+                    busCheck();//checking the bus lines to read BW or BR
+                    CPUconnection();//set a new connection of the cpu - cache
+                    Thread.sleep(50);//process repeated each 50 ms
+                    if(controller.getMissSignal() >= 1){controller.decrementMissSignal();}
+                    while (usingBus) {//this block pause cpu for waiting to connect and comunicate
 
-                while (usingBus) {//this block pause cpu for waiting to connect and comunicate
-                    
-                    busCheck();//check bus
-                    cpu.pauseCpu();//maintain paused the cpu
-                    Thread.sleep(50);
-                }
-                cpu.resumeCpu();//resume the paused cpu
+                        busCheck();//check bus
+                        cpu.pauseCpu();//maintain paused the cpu
+                        Thread.sleep(50);
+                    }
+                    cpu.resumeCpu();//resume the paused cpu
 
             }
 
@@ -217,6 +221,11 @@ public class ProcessorBlock extends Thread {
     public String getBusRequestType() {
         return busRequestType;
     }
+
+
+  
+    
+    
 
     
 }
